@@ -183,17 +183,24 @@ export function ContactClient() {
 
                                         <div className="flex flex-col gap-2">
                                             <label htmlFor="project" className="text-sm font-medium text-[#9CA3AF]">Project Budget</label>
-                                            <select
-                                                id="project"
-                                                defaultValue=""
-                                                className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer"
-                                            >
-                                                <option value="" disabled>Select an option</option>
-                                                <option value="5k-10k">$5k - $10k</option>
-                                                <option value="10k-25k">$10k - $25k</option>
-                                                <option value="25k-50k">$25k - $50k</option>
-                                                <option value="50k+">$50k+</option>
-                                            </select>
+                                            <div className="relative group">
+                                                <select
+                                                    id="project"
+                                                    defaultValue=""
+                                                    className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer group-hover:border-[#374151]"
+                                                >
+                                                    <option value="" disabled>Select an option</option>
+                                                    <option value="5-100">$5 - $100</option>
+                                                    <option value="100-500">$100 - $500</option>
+                                                    <option value="500-5000">$500 - $5,000</option>
+                                                    <option value="5000-50000">$5,000 - $50,000</option>
+                                                </select>
+                                                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9CA3AF] group-hover:text-white transition-colors">
+                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                    </svg>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div className="flex flex-col gap-2">
