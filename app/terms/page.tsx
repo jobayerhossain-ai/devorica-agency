@@ -71,7 +71,7 @@ export default function TermsOfService() {
                         <div className="mt-4 p-6 rounded-2xl bg-white/5 border border-white/10">
                             <p className="font-semibold text-white">Legal Department</p>
                             <p>Email: legal@devorica.com</p>
-                            <p>Devorica Agency, Dhaka, Bangladesh</p>
+                            <p>Devorica Agency, Feni Sadar, Feni</p>
                         </div>
                     </section>
                 </div>

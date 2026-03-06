@@ -82,8 +82,8 @@ export default function PrivacyPolicy() {
                         </p>
                         <div className="mt-4 p-6 rounded-2xl bg-white/5 border border-white/10">
                             <p className="font-semibold text-white">Devorica Agency</p>
-                            <p>Email: hello@devorica.com</p>
-                            <p>Address: Dhaka, Bangladesh</p>
+                            <p>Email: support@devorica.com</p>
+                            <p>Address: Feni Sadar, Feni</p>
                         </div>
                     </section>
                 </div>

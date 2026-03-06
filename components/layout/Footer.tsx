@@ -116,19 +116,19 @@ export function Footer() {
                         <ul className="flex flex-col gap-4">
                             <li className="flex items-start gap-3 text-[#9CA3AF]">
                                 <Mail className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                                <a href="mailto:hello@devorica.com" className="hover:text-white transition-colors">
-                                    hello@devorica.com
+                                <a href="mailto:support@devorica.com" className="hover:text-white transition-colors">
+                                    support@devorica.com
                                 </a>
                             </li>
                             <li className="flex items-start gap-3 text-[#9CA3AF]">
                                 <Phone className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                                <a href="tel:+8801234567890" className="hover:text-white transition-colors">
-                                    +880 1234 567 890
+                                <a href="tel:+8801619504428" className="hover:text-white transition-colors">
+                                    +8801619504428
                                 </a>
                             </li>
                             <li className="flex items-start gap-3 text-[#9CA3AF]">
                                 <MapPin className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                                <span>Dhaka, Bangladesh</span>
+                                <span>Feni Sadar, Feni</span>
                             </li>
                         </ul>
                     </div>

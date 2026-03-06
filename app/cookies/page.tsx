@@ -72,7 +72,7 @@ export default function CookiePolicy() {
                     <section>
                         <h2 className="text-2xl font-heading font-semibold text-white mb-4">6. Contact Us</h2>
                         <p>
-                            If you have questions about our use of cookies, please contact us at hello@devorica.com.
+                            If you have questions about our use of cookies, please contact us at support@devorica.com.
                         </p>
                     </section>
                 </div>

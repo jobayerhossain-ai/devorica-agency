@@ -66,7 +66,7 @@ export function AboutClient() {
                                 Devorica was founded on a simple premise: businesses deserve digital products that don&apos;t just look beautiful, but perform ruthlessly.
                             </p>
                             <p className="text-lg text-subtext leading-relaxed mt-4">
-                                Based in Dhaka, Bangladesh, we are a tightly-knit team of senior engineers and product designers who bridge the gap between creative vision and complex technical reality.
+                                Based in Feni, Bangladesh, we are a tightly-knit team of senior engineers and product designers who bridge the gap between creative vision and complex technical reality.
                             </p>
                         </motion.div>
 

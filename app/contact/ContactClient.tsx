@@ -76,8 +76,8 @@ export function ContactClient() {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold text-xl mb-1">Email Us</h4>
-                                        <a href="mailto:hello@devorica.com" className="text-subtext hover:text-white transition-colors text-lg">
-                                            hello@devorica.com
+                                        <a href="mailto:support@devorica.com" className="text-subtext hover:text-white transition-colors text-lg">
+                                            support@devorica.com
                                         </a>
                                     </div>
                                 </div>
@@ -89,8 +89,8 @@ export function ContactClient() {
                                     </div>
                                     <div>
                                         <h4 className="text-white font-bold text-xl mb-1">Call Us</h4>
-                                        <a href="tel:+8801234567890" className="text-subtext hover:text-white transition-colors text-lg">
-                                            +880 1234 567 890
+                                        <a href="tel:+8801619504428" className="text-subtext hover:text-white transition-colors text-lg">
+                                            +8801619504428
                                         </a>
                                     </div>
                                 </div>
