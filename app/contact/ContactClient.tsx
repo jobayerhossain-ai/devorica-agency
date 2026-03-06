@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { fadeUpVariant, staggerContainer } from "@/animations/variants";
 import { CTA } from "@/sections/cta/CTA";
 import { Button } from "@/components/ui/Button";
@@ -10,6 +10,19 @@ import { Mail, MapPin, Phone, MessageSquare, Send } from "lucide-react";
 export function ContactClient() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [isBudgetOpen, setIsBudgetOpen] = useState(false);
+    const [selectedBudget, setSelectedBudget] = useState("");
+    const dropdownRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsBudgetOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -182,25 +195,65 @@ export function ContactClient() {
                                         </div>
 
                                         <div className="flex flex-col gap-2">
-                                            <label htmlFor="project" className="text-sm font-medium text-[#9CA3AF]">Project Budget</label>
-                                            <div className="relative group">
-                                                <select
-                                                    id="project"
-                                                    defaultValue=""
-                                                    className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer group-hover:border-[#374151]"
+                                            <label className="text-sm font-medium text-[#9CA3AF]">Project Budget</label>
+                                            <div className="relative" ref={dropdownRef}>
+                                                <button
+                                                    type="button"
+                                                    onClick={() => setIsBudgetOpen(!isBudgetOpen)}
+                                                    className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white text-left flex justify-between items-center hover:border-[#374151] transition-all focus:outline-none focus:border-accent"
                                                 >
-                                                    <option value="" disabled>Select an option</option>
-                                                    <option value="5-100">$5 - $100</option>
-                                                    <option value="100-500">$100 - $500</option>
-                                                    <option value="500-5000">$500 - $5,000</option>
-                                                    <option value="5000-50000">$5,000 - $50,000</option>
-                                                </select>
-                                                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#9CA3AF] group-hover:text-white transition-colors">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <span className={selectedBudget ? "text-white" : "text-[#4B5563]"}>
+                                                        {selectedBudget || "Select an option"}
+                                                    </span>
+                                                    <motion.svg
+                                                        animate={{ rotate: isBudgetOpen ? 180 : 0 }}
+                                                        width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                        className="text-[#9CA3AF]"
+                                                    >
                                                         <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                                    </svg>
-                                                </div>
+                                                    </motion.svg>
+                                                </button>
+
+                                                <AnimatePresence>
+                                                    {isBudgetOpen && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, y: 0, scale: 0.95 }}
+                                                            animate={{ opacity: 1, y: 8, scale: 1 }}
+                                                            exit={{ opacity: 0, y: 0, scale: 0.95 }}
+                                                            transition={{
+                                                                type: "spring",
+                                                                stiffness: 300,
+                                                                damping: 30
+                                                            }}
+                                                            className="absolute top-full left-0 w-full z-50 mt-1 bg-[#0F172A] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden py-2"
+                                                        >
+                                                            {[
+                                                                "$5 - $100",
+                                                                "$100 - $500",
+                                                                "$500 - $5,000",
+                                                                "$5,000 - $50,000"
+                                                            ].map((option) => (
+                                                                <button
+                                                                    key={option}
+                                                                    type="button"
+                                                                    onClick={() => {
+                                                                        setSelectedBudget(option);
+                                                                        setIsBudgetOpen(false);
+                                                                    }}
+                                                                    className="w-full px-6 py-3 text-left text-[#D1D5DB] hover:bg-accent/10 hover:text-white transition-colors flex items-center justify-between group"
+                                                                >
+                                                                    {option}
+                                                                    {selectedBudget === option && (
+                                                                        <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                                                                    )}
+                                                                </button>
+                                                            ))}
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
                                             </div>
+                                            {/* Hidden input for form submission if needed */}
+                                            <input type="hidden" name="budget" value={selectedBudget} />
                                         </div>
 
                                         <div className="flex flex-col gap-2">
