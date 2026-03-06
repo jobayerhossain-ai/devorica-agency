@@ -137,9 +137,10 @@ export function Footer() {
                 {/* Bottom Bar */}
                 <div className="pt-8 border-t border-[#1F2937] flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#9CA3AF]">
                     <p>© {currentYear} Devorica. All rights reserved.</p>
-                    <div className="flex gap-6">
+                    <div className="flex flex-wrap justify-center md:justify-end gap-6">
                         <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+                        <Link href="/cookies" className="hover:text-white transition-colors">Cookie Policy</Link>
                     </div>
                 </div>
             </div>
