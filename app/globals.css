@@ -269,3 +269,7 @@
 .hamburger-toggle.is-open .bar:nth-child(3) {
   transform: translateY(-7.75px) rotate(45deg);
 }
+
+.hamburger-toggle.is-open .bar:nth-child(3) {
+  transform: translateY(-7.75px) rotate(45deg);
+}
