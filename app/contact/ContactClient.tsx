@@ -103,7 +103,7 @@ export function ContactClient() {
                                     <div>
                                         <h4 className="text-white font-bold text-xl mb-1">Office</h4>
                                         <p className="text-subtext text-lg">
-                                            Banani, Dhaka<br />
+                                            Feni Sadar, Feni<br />
                                             Bangladesh
                                         </p>
                                     </div>
@@ -227,6 +227,45 @@ export function ContactClient() {
                         </motion.div>
 
                     </div>
+                </div>
+            </section>
+
+            {/* Ultra-Grade Map Section */}
+            <section className="pb-24 bg-[#0B0B0B]">
+                <div className="max-w-[1280px] mx-auto px-6">
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="relative w-full h-[500px] rounded-[2.5rem] overflow-hidden border border-white/5 group shadow-2xl"
+                    >
+                        {/* Ambient Glow */}
+                        <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
+
+                        {/* High-End Map Container */}
+                        <div className="w-full h-full grayscale invert-[0.9] contrast-[1.1] scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.5341460413717!2d91.40331842038323!3d23.027740831945554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375369b34ad880ad%3A0x164ca01aec37204e!2sHospital%20Rd!5e1!3m2!1sen!2sbd!4v1772838829921!5m2!1sen!2sbd"
+                                width="100%"
+                                height="100%"
+                                style={{ border: 0 }}
+                                allowFullScreen
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                className="opacity-80"
+                            ></iframe>
+                        </div>
+
+                        {/* Glass Overlay for aesthetics */}
+                        <div className="absolute bottom-10 left-10 z-20 px-6 py-4 rounded-2xl bg-[#0F172A]/80 backdrop-blur-md border border-white/10 shadow-xl">
+                            <div className="flex items-center gap-3">
+                                <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                                <span className="text-white font-medium">Headquarters</span>
+                            </div>
+                            <p className="text-sm text-subtext mt-1">Feni Sadar, Feni, Bangladesh</p>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </>
