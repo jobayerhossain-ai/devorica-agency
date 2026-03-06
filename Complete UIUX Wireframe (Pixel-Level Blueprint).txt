@@ -1,0 +1,360 @@
+1️⃣ Overall Layout System
+Container Width
+max-width: 1280px
+padding: 24px
+Grid System
+12 Column Grid
+Gap: 24px
+Section Spacing
+Top / Bottom: 120px
+Mobile: 80px
+2️⃣ Navbar Layout
+
+Height:
+
+80px
+Left
+
+Logo
+
+Center
+
+Navigation menu
+
+Home
+Services
+Portfolio
+Blog
+About
+Contact
+Right
+
+CTA button
+
+Start Project
+Mobile
+
+Hamburger menu
+
+3️⃣ Hero Section (Most Important)
+
+Height:
+
+90vh
+
+Layout:
+
+Left Content
+Right Visual
+Left Side
+
+Headline
+
+High-Performance Custom Websites & Web Applications
+
+Font size:
+
+64px
+
+Subheadline
+
+We build fast, scalable and modern digital products for growing businesses.
+
+Buttons
+
+Start a Project
+View Portfolio
+Right Side
+
+Visual:
+
+Animated website mockup
+
+Animation ideas:
+
+floating UI elements
+
+gradient glow
+
+subtle parallax
+
+4️⃣ Client Trust Section
+
+Height:
+
+120px
+
+Layout:
+
+Horizontal logos
+
+Example:
+
+Client logos
+Project stats
+Trust badges
+
+Stats example:
+
+100+ Projects Delivered
+10+ Business Clients
+5️⃣ Services Section
+
+Section title:
+
+Our Services
+
+Layout:
+
+3 Column Grid
+
+Card structure:
+
+Icon
+Service Title
+Short Description
+Learn More →
+
+Services:
+
+Custom Website Development
+Web Application Development
+Landing Page Development
+Ecommerce Development
+App Development
+Website Redesign
+
+Hover animation:
+
+Card lift + glow border
+6️⃣ Portfolio Section
+
+Title:
+
+Selected Projects
+
+Layout:
+
+3 Column Grid
+
+Project card:
+
+Project image
+Project title
+Technology used
+View project button
+
+Hover effect:
+
+Image zoom + overlay
+7️⃣ Development Process Section
+
+Layout:
+
+Horizontal timeline
+
+Steps:
+
+01 Research
+02 Design
+03 Development
+04 Testing
+05 Launch
+
+Animation:
+
+Step reveal on scroll
+
+8️⃣ Technology Stack Section
+
+Grid layout:
+
+6–8 icons
+
+Technologies:
+
+Laravel
+React
+Next.js
+Node.js
+Python
+Tailwind
+
+Style:
+
+Minimal icon grid
+
+Hover effect:
+
+Glow effect
+
+9️⃣ Testimonials Section
+
+Layout:
+
+2 Column Grid
+
+Left:
+
+Client photo
+
+Right:
+
+Review text
+
+Example:
+
+“Devorica built a fast and modern website for our company.”
+
+Carousel animation optional।
+
+🔟 Call To Action Section
+
+Background:
+
+Gradient highlight
+
+Text:
+
+Ready to build your next digital product?
+
+Buttons:
+
+Start Your Project
+Contact Us
+1️⃣1️⃣ Footer Layout
+
+Layout:
+
+4 Column Grid
+
+Column 1:
+
+Logo + short description
+
+Column 2:
+
+Services
+
+Custom Website
+Web App
+Landing Page
+
+Column 3:
+
+Company
+
+About
+Portfolio
+Blog
+Contact
+
+Column 4:
+
+Contact
+
+Email
+Phone
+Location
+🎨 Design System
+Colors
+
+Primary:
+
+#0B0B0B
+
+Background:
+
+#0F172A
+
+Accent:
+
+#00E5FF
+
+Secondary Accent:
+
+#6366F1
+
+Text:
+
+#E5E7EB
+🔤 Typography
+
+Heading font:
+
+Space Grotesk
+
+Body font:
+
+Inter
+
+Font scale:
+
+H1 → 64px
+H2 → 40px
+H3 → 28px
+Body → 18px
+✨ Animation Blueprint
+
+Animations:
+
+Hero reveal animation
+Card hover lift
+Smooth scroll
+Fade in sections
+Parallax background
+
+Libraries:
+
+Framer Motion
+Lenis
+
+Animation rule:
+
+Duration: 0.4–0.8s
+Ease: easeOut
+📱 Responsive Breakpoints
+
+Breakpoints:
+
+Mobile → 375px
+Tablet → 768px
+Laptop → 1024px
+Desktop → 1280px
+Ultrawide → 1536px
+⚡ Performance Optimization
+
+Rules:
+
+JS bundle <200kb
+Images optimized
+Lazy loading
+Font optimization
+
+Tools:
+
+next/image
+next/font
+🚀 Deployment Workflow
+
+Development:
+
+VS Code → GitHub → Vercel
+
+Deployment command:
+
+git add .
+git commit -m "update"
+git push
+
+Vercel auto deploy।
+
+⭐ Final Experience Goal
+
+Website feel হওয়া উচিত:
+
+Super fast
+Modern
+Premium
+Smooth animation
+Agency level professional

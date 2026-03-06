@@ -1,0 +1,335 @@
+1️⃣ Design System Foundation
+Grid System
+12 column grid
+Max width: 1280px
+Container padding: 24px
+Column gap: 24px
+Spacing Scale
+8px
+16px
+24px
+32px
+48px
+64px
+96px
+120px
+
+এই spacing system পুরো site জুড়ে consistent থাকবে।
+
+2️⃣ Color System (Logo Based)
+
+Primary Colors
+
+Usage	Color
+Primary	#0B0B0B
+Background	#0F172A
+Accent	#00E5FF
+Secondary Accent	#6366F1
+
+Neutral Colors
+
+Usage	Color
+Text	#E5E7EB
+Subtext	#9CA3AF
+Border	#1F2937
+
+Gradient
+
+linear-gradient(135deg,#00E5FF,#6366F1)
+
+Use:
+
+CTA buttons
+
+highlight sections
+
+hover effects
+
+3️⃣ Typography System
+
+Heading Font
+
+Space Grotesk
+
+Body Font
+
+Inter
+
+Font Scale
+
+Element	Size
+H1	64px
+H2	40px
+H3	28px
+H4	22px
+Body	18px
+Small	16px
+
+Line height
+
+1.4
+4️⃣ Button Component
+
+Primary Button
+
+Style:
+
+Background: gradient
+Padding: 16px 32px
+Border radius: 12px
+Font weight: 600
+
+Hover effect
+
+Glow + slight lift
+
+Example
+
+Start Your Project
+
+Secondary Button
+
+Border button
+Border: 1px solid #6366F1
+
+Example
+
+View Portfolio
+5️⃣ Card Component
+
+Card Style
+
+Background: #0F172A
+Border radius: 16px
+Padding: 32px
+Border: subtle
+
+Hover
+
+Lift + glow border
+
+Used for:
+
+services
+
+portfolio
+
+blog posts
+
+6️⃣ Service Card Component
+
+Structure
+
+Icon
+Title
+Short description
+Learn more arrow
+
+Example
+
+Custom Website Development
+
+Animation
+
+hover scale 1.02
+7️⃣ Portfolio Card Component
+
+Structure
+
+Project image
+Project title
+Technology stack
+View project button
+
+Hover effect
+
+Image zoom
+Overlay fade
+8️⃣ Section Title Component
+
+Structure
+
+Small label
+Main title
+Short description
+
+Example
+
+Our Services
+We build powerful digital products for modern businesses.
+
+Alignment
+
+Center
+9️⃣ Testimonial Component
+
+Structure
+
+Client photo
+Review text
+Client name
+Company name
+
+Example
+
+“Devorica built a high-performance website for our business.”
+🔟 Navigation Component
+
+Navbar layout
+
+Logo (left)
+Menu (center)
+CTA button (right)
+
+Menu items
+
+Home
+Services
+Portfolio
+Blog
+About
+Contact
+
+Navbar behavior
+
+Sticky
+Blur background on scroll
+1️⃣1️⃣ Footer Component
+
+Grid layout
+
+4 columns
+
+Column content
+
+Column 1
+
+Logo
+Short company description
+
+Column 2
+
+Services
+
+Column 3
+
+Company links
+
+Column 4
+
+Contact information
+1️⃣2️⃣ Form Component
+
+Fields
+
+Name
+Email
+Message
+
+Button
+
+Send Message
+
+Style
+
+Rounded inputs
+Subtle border
+Focus glow
+1️⃣3️⃣ Animation System
+
+Allowed animations
+
+Fade in
+Slide up
+Hover lift
+Smooth scroll
+Parallax
+
+Libraries
+
+Framer Motion
+Lenis
+
+Animation duration
+
+0.4s – 0.8s
+1️⃣4️⃣ Icon System
+
+Icon style
+
+Minimal line icons
+
+Libraries
+
+Lucide Icons
+Heroicons
+1️⃣5️⃣ Responsive System
+
+Breakpoints
+
+Mobile → 375px
+Tablet → 768px
+Laptop → 1024px
+Desktop → 1280px
+Ultrawide → 1536px
+
+Mobile first approach।
+
+1️⃣৬️⃣ Image System
+
+Use
+
+next/image
+
+Rules
+
+WebP format
+Lazy loading
+Responsive sizes
+1️⃣৭️⃣ Performance Rules
+
+Rules
+
+JS bundle <200kb
+Images optimized
+Minimal dependencies
+
+Target
+
+Lighthouse score 95+
+Load time <1s
+1️⃣৮️⃣ Folder Structure (Component Based)
+components
+ui
+cards
+buttons
+sections
+hero
+services
+portfolio
+process
+testimonials
+cta
+1️⃣৯️⃣ Animation Hierarchy
+
+Page load animation
+
+Hero reveal
+
+Scroll animation
+
+Section fade in
+
+Hover animation
+
+Card lift
+Button glow
+2️⃣0️⃣ Final Experience Goal
+
+Website feel:
+
+Super fast
+Modern
+Premium
+Smooth animation
+Agency level professional

@@ -1,0 +1,411 @@
+Devorica Website PRD
+
+Product Requirements Document
+
+1. Product Overview
+
+Product Name: Devorica Agency Website
+
+Type: High-performance Web Development Agency Website
+
+Goal:
+Bangladesh market এ businesses কে custom website development, web application development এবং landing page development services offer করা।
+
+Website এর main objective:
+
+Lead generation
+
+Client trust build করা
+
+Portfolio showcase
+
+SEO traffic generate করা
+
+2. Target Audience
+
+Primary audience:
+
+Small business owners
+
+Startups
+
+Ecommerce businesses
+
+Corporate companies
+
+SaaS founders
+
+Location focus:
+
+Bangladesh
+
+Secondary:
+
+International clients
+3. Product Goals
+
+Main goals:
+
+Website extremely fast হওয়া
+
+World class design
+
+Lag-free animation
+
+100% responsive
+
+SEO optimized
+
+Lead generation focused
+
+Performance goals:
+
+Page load < 1 second
+Lighthouse score 95+
+SEO score 100
+4. Core Features
+
+Website must include:
+
+Lead Generation
+
+Contact form
+
+WhatsApp button
+
+Email contact
+
+Call to action buttons
+
+Portfolio
+
+Project showcase
+
+Technology used
+
+Case studies
+
+SEO
+
+Service pages
+
+Blog system
+
+Schema markup
+
+Trust Signals
+
+Testimonials
+
+Client logos
+
+Project statistics
+
+5. Website Pages
+Main Pages
+Home
+Services
+Portfolio
+Case Studies
+Blog
+About
+Contact
+Service Pages
+Custom Website Development
+Web Application Development
+Landing Page Development
+Ecommerce Website Development
+App Development
+Website Redesign
+
+Total pages:
+
+12–14
+6. Homepage Structure
+
+Homepage is the most important page.
+
+Section 1 — Hero
+
+Content:
+
+headline
+
+subheadline
+
+CTA button
+
+animated visual
+
+Example headline:
+
+High-Performance Custom Websites & Web Applications
+
+Buttons:
+
+Start a Project
+View Portfolio
+Section 2 — Trust Section
+
+Show:
+
+number of projects
+
+client logos
+
+experience badges
+
+Example:
+
+100+ Projects Delivered
+Fast & Secure Development
+Section 3 — Services
+
+Show service cards:
+
+Custom Website Development
+Web Application Development
+Landing Page Development
+Ecommerce Development
+App Development
+
+Each card links to service page.
+
+Section 4 — Portfolio Preview
+
+Show featured projects.
+
+Each project card:
+
+Project Image
+Project Title
+Technology Used
+View Project
+Section 5 — Development Process
+
+Steps:
+
+01 Research
+02 Design
+03 Development
+04 Testing
+05 Launch
+Section 6 — Technology Stack
+
+Icons for:
+
+Laravel
+React
+Next.js
+Node.js
+Python
+Tailwind CSS
+Section 7 — Testimonials
+
+Client feedback section.
+
+Example:
+
+“Devorica built a fast and modern website for our business.”
+
+Section 8 — Call to Action
+
+Large CTA section.
+
+Example:
+
+Ready to build your next digital product?
+
+Buttons:
+
+Start Your Project
+Contact Us
+7. Portfolio Page
+
+Portfolio grid layout.
+
+Each item includes:
+
+Project image
+
+Short description
+
+Technology stack
+
+Case study link
+
+8. Case Study Page
+
+Structure:
+
+Problem
+
+Solution
+
+Result
+
+Example:
+
+Client needed a high converting landing page
+We developed optimized landing page
+Result: 40% conversion increase
+9. Blog System
+
+Purpose:
+
+SEO traffic
+
+authority building
+
+Example topics:
+
+Website Development Cost in Bangladesh
+Best Web Design Company in Bangladesh
+Landing Page Design Guide
+Custom Website vs WordPress
+
+Blog URL structure:
+
+/blog/article-name
+10. Design Requirements
+
+Design must be:
+
+Modern
+Minimal
+Dark theme
+Premium agency style
+Color Palette
+Primary: #0B0B0B
+Background: #0F172A
+Accent: #00E5FF
+Secondary Accent: #6366F1
+Text: #E5E7EB
+11. Typography
+
+Heading font:
+
+Space Grotesk
+
+Body font:
+
+Inter
+12. Animation Requirements
+
+Animations must be smooth and lightweight.
+
+Allowed animation types:
+
+Fade in
+Slide up
+Hover lift
+Parallax
+Smooth scroll
+
+Libraries:
+
+Framer Motion
+Lenis
+
+Avoid:
+
+Heavy animation libraries
+Large JS bundles
+13. Performance Requirements
+
+Website must be optimized for speed.
+
+Rules:
+
+JS bundle < 200kb
+Optimized images
+Lazy loading
+Font optimization
+
+Target metrics:
+
+Lighthouse Performance 95+
+Load time <1s
+14. SEO Requirements
+
+Website must include:
+
+Meta tags
+Sitemap
+Robots.txt
+Schema markup
+Open Graph tags
+
+Target keywords:
+
+web design company bangladesh
+website development company bangladesh
+custom website development bangladesh
+15. Responsiveness
+
+Website must support:
+
+Mobile
+Tablet
+Laptop
+Desktop
+Ultrawide
+
+Design must follow mobile-first approach.
+
+16. Technology Stack
+
+Final recommended stack:
+
+Frontend:
+
+Next.js
+Tailwind CSS
+
+Animation:
+
+Framer Motion
+Lenis
+
+Hosting:
+
+Vercel
+
+Version control:
+
+GitHub
+17. Deployment Workflow
+
+Development workflow:
+
+Local Development → GitHub → Vercel Auto Deploy
+
+Command example:
+
+git add .
+git commit -m "update"
+git push
+
+Vercel automatically deploys new version.
+
+18. Future Expansion
+
+Future features may include:
+
+Admin dashboard
+Client portal
+Project tracking
+AI chatbot
+Final Summary
+
+Devorica website must be:
+
+Super fast
+World-class design
+Smooth animation
+SEO optimized
+Client-focused
+
+Primary objective:
+
+Generate business leads from Bangladesh market
