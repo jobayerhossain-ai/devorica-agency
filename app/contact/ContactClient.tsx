@@ -243,8 +243,15 @@ export function ContactClient() {
                         {/* Ambient Glow */}
                         <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
 
+                        {/* High-End Map Header Overlay */}
+                        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 px-8 py-3 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 shadow-2xl">
+                            <h2 className="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent">
+                                Visit Our Office
+                            </h2>
+                        </div>
+
                         {/* High-End Map Container */}
-                        <div className="w-full h-full grayscale invert-[0.9] contrast-[1.1] scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out">
+                        <div className="w-full h-full scale-105 group-hover:scale-100 transition-transform duration-[2s] ease-out">
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d916.5341460413717!2d91.40331842038323!3d23.027740831945554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375369b34ad880ad%3A0x164ca01aec37204e!2sHospital%20Rd!5e1!3m2!1sen!2sbd!4v1772838829921!5m2!1sen!2sbd"
                                 width="100%"
@@ -253,7 +260,7 @@ export function ContactClient() {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                className="opacity-80"
+                                className="opacity-95"
                             ></iframe>
                         </div>
 
