@@ -17,7 +17,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             outline: "border border-secondary-accent text-foreground hover:bg-foreground/5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)]",
             ghost: "text-foreground-muted hover:text-foreground hover:bg-foreground/5",
             cta: "cta-animated",
-            "cta-outline": "bg-secondary-accent/10 backdrop-blur-md border border-secondary-accent/30 text-secondary-accent hover:bg-secondary-accent/20 hover:border-secondary-accent/60 hover:shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:-translate-y-1",
+            "cta-outline": "font-bold text-sm tracking-wide rounded-xl bg-accent text-white dark:text-black uppercase hover:brightness-110 hover:-translate-y-0.5 shadow-lg hover:shadow-[0_0_20px_var(--t-accent)] whitespace-nowrap",
         };
 
         const sizes = {
