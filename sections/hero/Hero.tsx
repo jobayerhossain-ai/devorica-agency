@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SectionLayout } from "@/components/layout/SectionLayout";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
+import { BlurInText } from "@/components/ui/BlurInText";
 
 export function Hero() {
     return (
@@ -24,10 +25,13 @@ export function Hero() {
                     <h1
                         className="text-5xl sm:text-6xl md:text-8xl lg:text-[110px] font-black font-heading text-foreground leading-[0.9] mb-10 tracking-tighter"
                     >
-                        Where Art<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground/70 to-accent/90">
-                            Meets Engineering.
-                        </span>
+                        <BlurInText text="Where Art" />
+                        <br />
+                        <BlurInText
+                            text="Meets Engineering."
+                            className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground/70 to-accent/90"
+                            delayOffset={0.45} // Delay based on length of "Where Art "
+                        />
                     </h1>
 
                     <p
@@ -88,6 +92,6 @@ export function Hero() {
                     </div>
                 </AnimatedReveal>
             </div>
-        </SectionLayout>
+        </SectionLayout >
     );
 }
