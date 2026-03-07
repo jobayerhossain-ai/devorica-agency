@@ -29,21 +29,21 @@ export function Services() {
                             className="group h-full"
                         >
                             <Link href={service.href} aria-label={`Learn more about ${service.title}`} className="block h-full transition-all duration-500 ease-out hover:-translate-y-2">
-                                <div className="h-full flex flex-col relative overflow-hidden rounded-2xl bg-card-bg border border-border p-8 lg:p-10 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-accent/5 group-hover:border-accent/20">
+                                <div className="h-full flex flex-col relative overflow-hidden rounded-2xl bg-card border border-border p-8 lg:p-10 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-accent/5 group-hover:border-accent/20">
                                     <div className="relative z-10 flex flex-col h-full">
-                                        <div className="w-14 h-14 rounded-2xl border border-border bg-surface-alt flex items-center justify-center text-heading mb-10 group-hover:border-accent/40 group-hover:bg-accent/10 group-hover:text-accent transition-all duration-500 shadow-xl shadow-black/20">
+                                        <div className="w-14 h-14 rounded-2xl border border-border bg-card-hover flex items-center justify-center text-foreground mb-10 group-hover:border-accent/40 group-hover:bg-accent/10 group-hover:text-accent transition-all duration-500 shadow-xl">
                                             <Icon className="w-7 h-7" aria-hidden="true" />
                                         </div>
 
-                                        <h3 className="text-2xl sm:text-3xl font-bold font-heading text-heading mb-6 tracking-tight group-hover:text-accent transition-colors duration-300">
+                                        <h3 className="text-2xl sm:text-3xl font-bold font-heading text-foreground mb-6 tracking-tight group-hover:text-accent transition-colors duration-300">
                                             {service.title}
                                         </h3>
 
-                                        <p className="text-subtext text-base sm:text-lg leading-relaxed mb-10 flex-grow font-medium">
+                                        <p className="text-foreground-muted text-base sm:text-lg leading-relaxed mb-10 flex-grow font-medium">
                                             {service.description}
                                         </p>
 
-                                        <div className="flex items-center text-[11px] font-bold text-subtext tracking-widest uppercase mt-auto group-hover:text-accent transition-all duration-300">
+                                        <div className="flex items-center text-[11px] font-bold text-gray-400 tracking-widest uppercase mt-auto group-hover:text-accent transition-all duration-300">
                                             Learn More Details
                                             <ArrowRight className="w-4 h-4 ml-3 transform group-hover:translate-x-2 transition-transform duration-500" aria-hidden="true" />
                                         </div>

@@ -22,16 +22,16 @@ export function Hero() {
                     </div>
 
                     <h1
-                        className="text-5xl sm:text-6xl md:text-8xl lg:text-[110px] font-black font-heading text-heading leading-[0.9] mb-10 tracking-tighter"
+                        className="text-5xl sm:text-6xl md:text-8xl lg:text-[110px] font-black font-heading text-foreground leading-[0.9] mb-10 tracking-tighter"
                     >
                         Where Art<br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-heading via-heading/70 to-accent/90">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground/70 to-accent/90">
                             Meets Engineering.
                         </span>
                     </h1>
 
                     <p
-                        className="text-xl sm:text-2xl text-subtext leading-relaxed max-w-xl mb-12 font-medium"
+                        className="text-xl sm:text-2xl text-foreground-muted leading-relaxed max-w-xl mb-12 font-medium"
                     >
                         Making world-class web development accessible to ambitious businesses. We turn complex ideas into cinematic, high-performance digital reality.
                     </p>
@@ -60,7 +60,7 @@ export function Hero() {
                     className="relative w-full max-w-2xl mx-auto lg:ml-0 group"
                 >
                     {/* Main Visual Asset */}
-                    <div className="relative rounded-[40px] border border-border bg-surface-alt overflow-hidden shadow-2xl shadow-black/60 aspect-square lg:aspect-[4/5] xl:aspect-square">
+                    <div className="relative rounded-[40px] border border-border bg-surface overflow-hidden shadow-2xl aspect-square lg:aspect-[4/5] xl:aspect-square transition-colors duration-300">
                         <Image
                             src="/images/hero-modern.png"
                             alt="DevOrica — Human centric digital growth visual showing strategic web engineering"
@@ -69,22 +69,22 @@ export function Hero() {
                             priority
                             className="object-cover opacity-80 group-hover:scale-105 transition-transform duration-1000"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated via-transparent to-transparent opacity-60" />
                     </div>
 
                     {/* Success Pulse - Floating Metrics */}
-                    <div className="absolute -bottom-6 -left-6 md:-left-12 p-6 rounded-3xl border border-accent/20 bg-surface/80 backdrop-blur-xl shadow-2xl z-20 max-w-[200px]">
+                    <div className="absolute -bottom-6 -left-6 md:-left-12 p-6 rounded-3xl border border-accent/20 bg-surface-elevated/80 backdrop-blur-xl shadow-2xl z-20 max-w-[200px] transition-colors duration-300">
                         <div className="flex items-center gap-3 mb-2">
                             <div className="w-2 h-2 rounded-full bg-accent animate-ping" />
                             <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Growth Pulse</span>
                         </div>
-                        <div className="text-3xl font-black text-heading">+120%</div>
-                        <div className="text-[10px] text-subtext font-medium leading-tight mt-1">Average ROI increase across partner portfolios</div>
+                        <div className="text-3xl font-black text-foreground">+120%</div>
+                        <div className="text-[10px] text-foreground-muted font-medium leading-tight mt-1">Average ROI increase across partner portfolios</div>
                     </div>
 
-                    <div className="absolute -top-6 -right-6 p-6 rounded-3xl border border-secondary-accent/20 bg-surface/80 backdrop-blur-xl shadow-2xl z-20">
-                        <div className="text-2xl font-black text-heading italic">9.8<span className="text-secondary-accent">%</span></div>
-                        <div className="text-[10px] text-subtext font-bold uppercase tracking-[0.1em]">Target Conversion</div>
+                    <div className="absolute -top-6 -right-6 p-6 rounded-3xl border border-secondary-accent/20 bg-surface-elevated/80 backdrop-blur-xl shadow-2xl z-20 transition-colors duration-300">
+                        <div className="text-2xl font-black text-foreground italic">9.8<span className="text-secondary-accent">%</span></div>
+                        <div className="text-[10px] text-foreground-muted font-bold uppercase tracking-[0.1em]">Target Conversion</div>
                     </div>
                 </AnimatedReveal>
             </div>

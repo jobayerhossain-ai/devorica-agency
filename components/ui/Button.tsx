@@ -9,15 +9,15 @@ interface ButtonProps extends ComponentProps<"button"> {
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = "primary", size = "md", showIcon, children, ...props }, ref) => {
-        const baseStyles = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-background disabled:opacity-50 disabled:pointer-events-none group";
+        const baseStyles = "inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-surface disabled:opacity-50 disabled:pointer-events-none group";
 
         const variants = {
-            primary: "bg-gradient-to-br from-accent to-secondary-accent text-primary hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:-translate-y-0.5",
-            secondary: "bg-white/10 text-white hover:bg-white/15 hover:-translate-y-0.5",
-            outline: "border border-secondary-accent text-text hover:bg-white/5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)]",
-            ghost: "text-subtext hover:text-white hover:bg-white/5",
+            primary: "bg-gradient-to-br from-accent to-secondary-accent text-surface hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] hover:-translate-y-0.5",
+            secondary: "bg-foreground/10 text-foreground hover:bg-foreground/15 hover:-translate-y-0.5",
+            outline: "border border-secondary-accent text-foreground hover:bg-foreground/5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)]",
+            ghost: "text-foreground-muted hover:text-foreground hover:bg-foreground/5",
             cta: "relative bg-gradient-to-br from-[#0097A7] to-[#4F46E5] text-white overflow-hidden shadow-[inset_0_0_1.6em_-0.6em_rgba(0,151,167,0.5)] hover:shadow-[inset_0_0_1.6em_-0.6em_rgba(0,151,167,0.7),0_0_25px_rgba(79,102,241,0.3)] pr-[3.3em] h-[2.8em]",
-            "cta-outline": "relative bg-transparent border border-white/12 text-white overflow-hidden hover:border-[#0097A7]/50 hover:bg-white/3 pr-[3.3em] h-[2.8em]",
+            "cta-outline": "relative bg-transparent border border-border text-foreground overflow-hidden hover:border-[#0097A7]/50 hover:bg-foreground/3 pr-[3.3em] h-[2.8em]",
         };
 
         const sizes = {
@@ -41,7 +41,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                         "ml-4 flex items-center justify-center rounded-lg transition-all duration-300",
                         isCTA ? "absolute right-[0.3em] h-[2.2em] w-[2.2em] bg-white group-hover:w-[calc(100%-0.6em)] shadow-[0.1em_0.1em_0.6em_0.2em_rgba(79,70,229,0.45)]" : ""
                     )}>
-                        <svg className={cn("w-4 h-4 transition-transform duration-300 group-hover:translate-x-1", variant === "cta" ? "text-secondary-accent" : "text-white")} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className={cn("w-4 h-4 transition-transform duration-300 group-hover:translate-x-1", variant === "cta" ? "text-secondary-accent" : "text-foreground")} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
                         </svg>
                     </div>

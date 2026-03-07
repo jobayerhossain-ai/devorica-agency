@@ -30,7 +30,7 @@ export function SectionTitle({
                 {title}
             </h2>
             {description && (
-                <p className="text-subtext text-lg">
+                <p className="text-foreground-muted text-lg">
                     {description}
                 </p>
             )}

@@ -14,7 +14,7 @@ export function CTA() {
 
             <AnimatedReveal
                 stagger={true}
-                className="relative z-10 p-10 sm:p-14 lg:p-20 rounded-[40px] border border-glass-border bg-glass backdrop-blur-2xl overflow-hidden group shadow-2xl shadow-black/40"
+                className="relative z-10 p-10 sm:p-14 lg:p-20 rounded-[40px] border border-border bg-foreground/[0.02] backdrop-blur-2xl overflow-hidden group shadow-2xl transition-colors duration-300"
             >
                 {/* Hover Glow Effect */}
                 <div className="absolute -inset-x-20 -top-20 h-40 bg-gradient-to-b from-accent/10 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -27,16 +27,16 @@ export function CTA() {
                     </div>
 
                     <h2
-                        className="text-4xl sm:text-5xl lg:text-7xl font-black font-heading text-heading mb-10 leading-[1.05] tracking-tighter"
+                        className="text-4xl sm:text-5xl lg:text-7xl font-black font-heading text-foreground mb-10 leading-[1.05] tracking-tighter"
                     >
                         Ready to scale your <br className="hidden lg:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-heading via-heading to-accent/80">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground to-accent/80">
                             next digital success?
                         </span>
                     </h2>
 
                     <p
-                        className="text-xl sm:text-2xl text-subtext mb-14 max-w-2xl leading-relaxed font-medium"
+                        className="text-xl sm:text-2xl text-foreground-muted mb-14 max-w-2xl leading-relaxed font-medium"
                     >
                         Partner with Devorica to transform your boldest vision into a market-dominating success story. Our strategic engineering team is ready to accelerate your ROI.
                     </p>

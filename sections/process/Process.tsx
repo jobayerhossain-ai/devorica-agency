@@ -36,11 +36,11 @@ export function Process() {
                             className="flex flex-col items-center text-center group"
                         >
                             {/* Step Node */}
-                            <div className="w-14 h-14 rounded-full bg-border border-2 border-border flex items-center justify-center text-heading font-bold font-heading mb-6 group-hover:border-accent group-hover:bg-accent/10 group-hover:text-accent transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
+                            <div className="w-14 h-14 rounded-full bg-card-hover border-2 border-border flex items-center justify-center text-foreground font-bold font-heading mb-6 group-hover:border-accent group-hover:bg-accent/10 group-hover:text-accent transition-all duration-300 relative z-10 shadow-lg">
                                 {item.step}
                             </div>
-                            <h3 className="text-xl font-bold font-heading text-heading mb-3 transition-colors group-hover:text-accent">{item.title}</h3>
-                            <p className="text-subtext text-sm">{item.desc}</p>
+                            <h3 className="text-xl font-bold font-heading text-foreground mb-3 transition-colors group-hover:text-accent">{item.title}</h3>
+                            <p className="text-foreground-muted text-sm">{item.desc}</p>
                         </div>
                     ))}
                 </AnimatedReveal>

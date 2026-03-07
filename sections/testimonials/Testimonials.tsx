@@ -66,7 +66,7 @@ export function Testimonials() {
                 <div className="absolute top-1/2 -translate-y-1/2 left-0 z-20 hidden lg:block">
                     <button
                         onClick={() => paginate(-1)}
-                        className="w-14 h-14 rounded-full bg-border/80 backdrop-blur-md border border-border flex items-center justify-center text-heading hover:bg-accent hover:text-surface-alt transition-all duration-300 focus:outline-none shadow-2xl"
+                        className="w-14 h-14 rounded-full bg-card-hover/80 backdrop-blur-md border border-border flex items-center justify-center text-foreground hover:bg-accent hover:text-surface transition-all duration-300 focus:outline-none shadow-2xl"
                     >
                         <ChevronLeft className="w-7 h-7" />
                     </button>
@@ -75,7 +75,7 @@ export function Testimonials() {
                 <div className="absolute top-1/2 -translate-y-1/2 right-0 z-20 hidden lg:block">
                     <button
                         onClick={() => paginate(1)}
-                        className="w-14 h-14 rounded-full bg-border/80 backdrop-blur-md border border-border flex items-center justify-center text-heading hover:bg-accent hover:text-surface-alt transition-all duration-300 focus:outline-none shadow-2xl"
+                        className="w-14 h-14 rounded-full bg-card-hover/80 backdrop-blur-md border border-border flex items-center justify-center text-foreground hover:bg-accent hover:text-surface transition-all duration-300 focus:outline-none shadow-2xl transition-colors duration-300"
                     >
                         <ChevronRight className="w-7 h-7" />
                     </button>
@@ -108,7 +108,7 @@ export function Testimonials() {
                                     paginate(-1);
                                 }
                             }}
-                            className="absolute w-full max-w-3xl bg-surface-alt p-10 lg:p-12 rounded-3xl border border-border shadow-2xl flex flex-col items-center text-center cursor-grab active:cursor-grabbing"
+                            className="absolute w-full max-w-3xl bg-surface p-10 lg:p-12 rounded-3xl border border-border shadow-2xl flex flex-col items-center text-center cursor-grab active:cursor-grabbing transition-colors duration-300"
                         >
                             {/* Quote decoration */}
                             <div className="absolute top-10 left-10 text-7xl text-border font-heading font-black opacity-20 select-none hidden md:block leading-none">&quot;</div>
@@ -120,12 +120,12 @@ export function Testimonials() {
                                 ))}
                             </div>
 
-                            <p className="text-heading text-xl md:text-2xl leading-relaxed mb-12 italic font-medium relative z-10 w-full px-2 lg:px-6">
+                            <p className="text-foreground text-xl md:text-2xl leading-relaxed mb-12 italic font-medium relative z-10 w-full px-2 lg:px-6">
                                 &quot;{CLIENT_TESTIMONIALS[currentIndex].quote}&quot;
                             </p>
 
                             <div className="flex flex-col items-center gap-4 mt-auto">
-                                <div className="w-16 h-16 rounded-full overflow-hidden border border-accent/20 relative shadow-xl shadow-black/40">
+                                <div className="w-16 h-16 rounded-full overflow-hidden border border-accent/20 relative shadow-xl">
                                     <Image
                                         src={CLIENT_TESTIMONIALS[currentIndex].image}
                                         alt={CLIENT_TESTIMONIALS[currentIndex].name}
@@ -135,8 +135,8 @@ export function Testimonials() {
                                     />
                                 </div>
                                 <div>
-                                    <h4 className="text-heading font-bold text-lg tracking-tight">{CLIENT_TESTIMONIALS[currentIndex].name}</h4>
-                                    <p className="text-subtext text-[11px] font-bold uppercase tracking-widest mt-1">{CLIENT_TESTIMONIALS[currentIndex].role}</p>
+                                    <h4 className="text-foreground font-bold text-lg tracking-tight">{CLIENT_TESTIMONIALS[currentIndex].name}</h4>
+                                    <p className="text-foreground-muted text-[11px] font-bold uppercase tracking-widest mt-1">{CLIENT_TESTIMONIALS[currentIndex].role}</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -152,7 +152,7 @@ export function Testimonials() {
                                 setDirection(idx > currentIndex ? 1 : -1);
                                 setCurrentIndex(idx);
                             }}
-                            className={`h-1.5 rounded-full transition-all duration-500 ease-out ${currentIndex === idx ? "w-8 bg-accent" : "w-3 bg-border hover:bg-border/80"
+                            className={`h-1.5 rounded-full transition-all duration-500 ease-out ${currentIndex === idx ? "w-8 bg-accent" : "w-3 bg-foreground/10 hover:bg-foreground/20"
                                 }`}
                             aria-label={`Go to slide ${idx + 1}`}
                         />

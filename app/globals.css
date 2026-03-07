@@ -1,83 +1,68 @@
-/* Tailwind CSS v4 Configuration - Ignore IDE "Unknown at-rule" warnings */
+/* Tailwind CSS v4 Configuration */
 @import "tailwindcss";
 
-@theme {
-  --color-primary: var(--theme-primary);
-  --color-background: var(--theme-background);
-  --color-surface: var(--theme-surface);
-  --color-surface-alt: var(--theme-surface-alt);
-  --color-accent: #00E5FF;
-  --color-secondary-accent: #6366F1;
-  --color-text: var(--theme-text);
-  --color-heading: var(--theme-heading);
-  --color-subtext: var(--theme-subtext);
-  --color-border: var(--theme-border);
-  --color-card-bg: var(--theme-card-bg);
-  --color-nav-bg: var(--theme-nav-bg);
-  --color-glass: var(--theme-glass);
-  --color-glass-border: var(--theme-glass-border);
+/* ========================================
+   Theme Token System — Light & Dark Mode
+   ======================================== */
 
+@theme {
+  /* Semantic color tokens — resolved from CSS custom properties */
+  --color-surface: var(--t-surface);
+  --color-surface-elevated: var(--t-surface-elevated);
+  --color-foreground: var(--t-foreground);
+  --color-foreground-muted: var(--t-foreground-muted);
+  --color-border: var(--t-border);
+  --color-card: var(--t-card);
+  --color-card-hover: var(--t-card-hover);
+
+  /* Brand colors — resolved from CSS custom properties for theme-aware contrast */
+  --color-accent: var(--t-accent);
+  --color-secondary-accent: var(--t-secondary-accent);
+
+  /* Legacy aliases for backwards compat */
+  --color-primary: var(--t-surface);
+  --color-background: var(--t-surface-elevated);
+  --color-text: var(--t-foreground);
+  --color-subtext: var(--t-foreground-muted);
+
+  /* Typography */
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-inter);
 }
 
-/* ========================================
-   THEME DEFINITIONS
-   Default = dark, .light class = light mode
-   ======================================== */
-
-:root {
-  /* Dark mode values (default) */
-  --theme-primary: #0B0B0B;
-  --theme-background: #0F172A;
-  --theme-surface: #0F172A;
-  --theme-surface-alt: #0B0B0B;
-  --theme-text: #E5E7EB;
-  --theme-heading: #FFFFFF;
-  --theme-subtext: #9CA3AF;
-  --theme-border: #1F2937;
-  --theme-card-bg: #0F172A;
-  --theme-nav-bg: rgba(15, 23, 42, 0.8);
-  --theme-glass: rgba(255, 255, 255, 0.05);
-  --theme-glass-border: rgba(255, 255, 255, 0.1);
+/* ---- Dark Theme (Default) ---- */
+:root,
+[data-theme="dark"] {
+  --t-surface: #0B0B0B;
+  --t-surface-elevated: #0F172A;
+  --t-foreground: #E5E7EB;
+  --t-foreground-muted: #9CA3AF;
+  --t-border: #1F2937;
+  --t-card: #0F172A;
+  --t-card-hover: #1E293B;
+  --t-accent: #00E5FF;
+  --t-secondary-accent: #6366F1;
 }
 
-.light {
-  --theme-primary: #F3EEFD;
-  --theme-background: #F3EEFD;
-  --theme-surface: #FFFFFF;
-  --theme-surface-alt: #EDE8F5;
-  --theme-text: #1A1A2E;
-  --theme-heading: #0F0F1A;
-  --theme-subtext: #64748B;
-  --theme-border: #D8D0E8;
-  --theme-card-bg: #FFFFFF;
-  --theme-nav-bg: rgba(243, 238, 253, 0.85);
-  --theme-glass: rgba(0, 0, 0, 0.03);
-  --theme-glass-border: rgba(0, 0, 0, 0.08);
-}
-
-/* ========================================
-   SMOOTH THEME TRANSITION
-   ======================================== */
-*,
-*::before,
-*::after {
-  transition-property: background-color, color, border-color, box-shadow, opacity;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
-}
-
-/* Disable transitions during initial load to prevent FOUC flash effect */
-.no-transition *,
-.no-transition *::before,
-.no-transition *::after {
-  transition: none !important;
+/* ---- Light Theme ---- */
+[data-theme="light"] {
+  --t-surface: #FFFFFF;
+  --t-surface-elevated: #F8FAFC;
+  --t-foreground: #111827;
+  --t-foreground-muted: #6B7280;
+  --t-border: #E5E7EB;
+  --t-card: #FFFFFF;
+  --t-card-hover: #F1F5F9;
+  --t-accent: #0891B2;
+  /* Darker cyan for light mode readability (WCAG AA) */
+  --t-secondary-accent: #4F46E5;
+  /* Slightly deeper indigo for light mode */
 }
 
 @layer base {
   body {
-    @apply bg-primary text-text font-body antialiased;
+    @apply bg-surface text-foreground font-body antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1,
@@ -86,23 +71,27 @@
   h4,
   h5,
   h6 {
-    @apply font-heading text-heading;
+    @apply font-heading text-foreground;
   }
 }
 
 @utility glass-panel {
-  @apply bg-glass backdrop-blur-md border border-glass-border;
+  @apply bg-card/50 backdrop-blur-md border border-border;
 }
 
-/* Social Icons — adapted from Uiverse.io/firemonste_8052 */
+/* ========================================
+   Social Icons — adapted from Uiverse.io
+   ======================================== */
 .social-icons {
   display: flex;
   align-items: center;
   gap: 0;
   list-style: none;
-  background-color: var(--theme-surface);
+  background-color: var(--t-surface-elevated);
+  border: 1px solid var(--t-border);
   border-radius: 30px;
   padding: 10px 16px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .social-icons .icon-content {
@@ -115,8 +104,8 @@
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--theme-heading);
-  color: var(--theme-primary);
+  background-color: var(--t-foreground);
+  color: var(--t-surface);
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0;
@@ -141,7 +130,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: var(--theme-subtext);
+  color: var(--t-foreground-muted);
   transition: all 0.3s ease-in-out;
 }
 
@@ -170,7 +159,9 @@
   color: #0A66C2;
 }
 
-/* Animated Hamburger Toggle — adapted from Uiverse.io/jerome_5148 */
+/* ========================================
+   Hamburger Toggle
+   ======================================== */
 .hamburger-toggle {
   @apply relative w-8 h-6 flex flex-col justify-between cursor-pointer transition-all duration-300;
 }
@@ -180,7 +171,7 @@
   width: 100%;
   height: 2.5px;
   border-radius: 50px;
-  background-color: var(--theme-heading);
+  background-color: var(--t-foreground);
   transition: all 0.4s ease;
   transform-origin: center;
 }
@@ -198,7 +189,9 @@
   transform: translateY(-7.75px) rotate(45deg);
 }
 
-/* Custom Loading Animation — adapt from Uiverse.io/JkHuger */
+/* ========================================
+   Preloader Animation
+   ======================================== */
 .preloader-container {
   position: fixed;
   inset: 0;
@@ -206,8 +199,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--theme-background);
-  transition: opacity 0.5s ease-out, visibility 0.5s;
+  background-color: var(--t-surface-elevated);
+  transition: opacity 0.5s ease-out, visibility 0.5s, background-color 0.3s ease;
 }
 
 .preloader-container.hidden {
@@ -235,7 +228,7 @@
   position: absolute;
   border-radius: 50%;
   background: #00E5FF;
-  border: 2px solid #000;
+  border: 2px solid var(--t-border);
   animation-fill-mode: both;
 }
 
@@ -264,6 +257,68 @@
   top: 65px;
   left: 65px;
   animation: jump-jump-3 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+}
+
+/* ========================================
+   CTA Button System
+   ======================================== */
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #0097A7 0%, #4F46E5 100%);
+  color: white !important;
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px -10px rgba(0, 151, 167, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 30px -15px rgba(0, 151, 167, 0.6);
+  background: linear-gradient(135deg, #00E5FF 0%, #6366F1 100%);
+}
+
+.cta-button-outline {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: transparent;
+  color: var(--t-foreground);
+  padding: 1rem 2.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  border: 2px solid var(--t-border);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cta-button-outline:hover {
+  border-color: #00E5FF;
+  background: rgba(0, 229, 255, 0.05);
+}
+
+.cta-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: white;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4F46E5;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover .cta-icon {
+  width: calc(100% - 1rem);
+  position: absolute;
+  right: 0.5rem;
 }
 
 @keyframes jump-jump-1 {
@@ -335,78 +390,4 @@
     opacity: 1;
     transform: translateX(-50%) scale(1);
   }
-}
-
-/* CTA Button Styles */
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 24px;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  border-radius: 999px;
-  background: var(--color-accent);
-  color: #000;
-  cursor: pointer;
-  border: none;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.cta-button:hover {
-  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
-  transform: translateY(-1px);
-}
-
-.cta-button .cta-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.cta-button:hover .cta-icon {
-  transform: translateX(3px);
-}
-
-.cta-button-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 24px;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--theme-heading);
-  border: 1.5px solid var(--theme-border);
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.cta-button-outline:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
-}
-
-.cta-button-outline .cta-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--theme-glass);
-  transition: transform 0.3s ease;
-}
-
-.cta-button-outline:hover .cta-icon {
-  transform: translateX(3px);
 }

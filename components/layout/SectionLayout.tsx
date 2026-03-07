@@ -20,8 +20,8 @@ export function SectionLayout({
     background = "default"
 }: SectionLayoutProps) {
     const bgStyles = {
-        default: "bg-background",
-        dark: "bg-surface-alt",
+        default: "bg-surface-elevated",
+        dark: "bg-surface",
         transparent: "bg-transparent"
     };
 
@@ -34,7 +34,7 @@ export function SectionLayout({
         <Section
             id={id}
             className={cn(
-                "relative py-32 lg:py-24 overflow-hidden border-b border-border/20",
+                "relative py-32 lg:py-24 overflow-hidden border-b border-border/30 transition-colors duration-300",
                 bgStyles[background],
                 className
             )}

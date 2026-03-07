@@ -25,7 +25,7 @@ export function PortfolioPreview() {
                 {PROJECTS.map((project, index) => (
                     <div key={index} className="group cursor-pointer flex flex-col h-full">
                         <Link href={project.href} className="flex-1 flex flex-col h-full">
-                            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden mb-8 border border-border bg-surface-alt group-hover:border-accent/20 transition-all duration-500">
+                            <div className="relative w-full aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden mb-8 border border-border bg-surface group-hover:border-accent/20 transition-all duration-500">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
@@ -35,7 +35,7 @@ export function PortfolioPreview() {
                                 />
 
                                 {/* Overlay Hover */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-8 backdrop-blur-[2px] z-10">
+                                <div className="absolute inset-0 bg-gradient-to-t from-surface-elevated to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end justify-center p-8 backdrop-blur-[2px] z-10">
                                     <Button variant="cta" className="pointer-events-none translate-y-4 group-hover:translate-y-0 transition-all duration-500 text-sm">
                                         View Case Study
                                     </Button>
@@ -43,12 +43,12 @@ export function PortfolioPreview() {
                             </div>
 
                             <div className="flex flex-col gap-4 flex-1">
-                                <h3 className="text-2xl sm:text-3xl font-bold font-heading text-heading group-hover:text-accent transition-colors duration-300 tracking-tight leading-tight">
+                                <h3 className="text-2xl sm:text-3xl font-bold font-heading text-foreground group-hover:text-accent transition-colors duration-300 tracking-tight leading-tight">
                                     {project.title}
                                 </h3>
                                 <div className="flex flex-wrap gap-2.5 mt-auto">
                                     {project.tech.map((t, i) => (
-                                        <Badge key={i} className="bg-glass border-glass-border text-[10px] font-bold uppercase tracking-widest text-subtext group-hover:border-accent/40 group-hover:text-heading transition-all duration-300 py-1.5 px-3">
+                                        <Badge key={i} className="bg-foreground/5 border-foreground/5 text-[10px] font-bold uppercase tracking-widest text-foreground-muted group-hover:border-accent/40 group-hover:text-foreground transition-all duration-300 py-1.5 px-3">
                                             {t}
                                         </Badge>
                                     ))}

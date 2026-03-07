@@ -44,7 +44,7 @@ export function AboutClient() {
     return (
         <>
             {/* About Hero Section */}
-            <section className="relative pt-32 pb-24 bg-card-bg border-b border-border overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-card border-b border-border overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-accent/10 blur-[120px] rounded-full z-0 pointer-events-none" />
 
                 <div className="max-w-[1280px] mx-auto px-6 relative z-10">
@@ -59,13 +59,13 @@ export function AboutClient() {
                                     Our Story
                                 </span>
                             </div>
-                            <h1 className="text-5xl md:text-6xl font-bold font-heading text-heading mb-6 tracking-tight leading-tight">
+                            <h1 className="text-5xl md:text-6xl font-bold font-heading text-foreground mb-6 tracking-tight leading-tight">
                                 We engineer <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary-accent">digital excellence.</span>
                             </h1>
-                            <p className="text-xl text-subtext leading-relaxed">
+                            <p className="text-xl text-foreground-muted leading-relaxed">
                                 Devorica was founded on a simple premise: businesses deserve digital products that don&apos;t just look beautiful, but perform ruthlessly.
                             </p>
-                            <p className="text-lg text-subtext leading-relaxed mt-4">
+                            <p className="text-lg text-foreground-muted leading-relaxed mt-4">
                                 Based in Feni, Bangladesh, we are a tightly-knit team of senior engineers and product designers who bridge the gap between creative vision and complex technical reality.
                             </p>
                         </motion.div>
@@ -84,8 +84,8 @@ export function AboutClient() {
                                 priority
                             />
                             {/* Glassmorphic overlay piece */}
-                            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-surface-alt/70 backdrop-blur-md border border-glass-border">
-                                <p className="text-heading font-medium text-lg">&quot;Code is poetry, but performance is business.&quot;</p>
+                            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-surface-elevated/70 backdrop-blur-md border border-border">
+                                <p className="text-foreground font-medium text-lg">&quot;Code is poetry, but performance is business.&quot;</p>
                             </div>
                         </motion.div>
                     </div>
@@ -93,7 +93,7 @@ export function AboutClient() {
             </section>
 
             {/* Mission & Values Section */}
-            <section className="py-24 bg-surface-alt border-b border-border">
+            <section className="py-24 bg-surface-elevated border-b border-border">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <motion.div
                         initial="hidden"
@@ -120,13 +120,13 @@ export function AboutClient() {
                             <motion.div
                                 key={idx}
                                 variants={fadeUpVariant}
-                                className="bg-card-bg p-8 rounded-2xl border border-border hover:border-accent/30 transition-colors group"
+                                className="bg-card p-8 rounded-2xl border border-border hover:border-accent/30 transition-colors group"
                             >
                                 <div className="w-14 h-14 rounded-xl bg-[#1F2937] flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors">
-                                    <val.icon className="w-7 h-7 text-heading group-hover:text-accent transition-colors" />
+                                    <val.icon className="w-7 h-7 text-foreground group-hover:text-accent transition-colors" />
                                 </div>
-                                <h3 className="text-2xl font-bold font-heading text-heading mb-4">{val.title}</h3>
-                                <p className="text-subtext leading-relaxed">{val.description}</p>
+                                <h3 className="text-2xl font-bold font-heading text-foreground mb-4">{val.title}</h3>
+                                <p className="text-foreground-muted leading-relaxed">{val.description}</p>
                             </motion.div>
                         ))}
                     </motion.div>
@@ -134,7 +134,7 @@ export function AboutClient() {
             </section>
 
             {/* Leadership / Team Section */}
-            <section className="py-24 bg-card-bg">
+            <section className="py-24 bg-card">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <motion.div
                         initial="hidden"
@@ -174,22 +174,22 @@ export function AboutClient() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
                                         <div className="flex gap-4">
                                             {member.socials.facebook && (
-                                                <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300">
+                                                <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-foreground transition-all transform translate-y-4 group-hover:translate-y-0 duration-300">
                                                     <Facebook className="w-5 h-5" />
                                                 </a>
                                             )}
                                             {member.socials.instagram && (
-                                                <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
+                                                <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-foreground transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
                                                     <Instagram className="w-5 h-5" />
                                                 </a>
                                             )}
                                             {member.socials.github && (
-                                                <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-700">
+                                                <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-foreground transition-all transform translate-y-4 group-hover:translate-y-0 duration-700">
                                                     <Github className="w-5 h-5" />
                                                 </a>
                                             )}
                                             {member.socials.linkedin && (
-                                                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-1000">
+                                                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-foreground transition-all transform translate-y-4 group-hover:translate-y-0 duration-1000">
                                                     <Linkedin className="w-5 h-5" />
                                                 </a>
                                             )}
@@ -197,8 +197,8 @@ export function AboutClient() {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-xl font-bold font-heading text-heading mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
-                                    <p className="text-sm font-medium text-subtext">{member.role}</p>
+                                    <h3 className="text-xl font-bold font-heading text-foreground mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
+                                    <p className="text-sm font-medium text-foreground-muted">{member.role}</p>
                                 </div>
                             </motion.div>
                         ))}

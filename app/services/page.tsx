@@ -103,7 +103,7 @@ const DETAILED_SERVICES = [
 
 export default function ServicesPage() {
     return (
-        <div className="bg-surface-alt">
+        <div className="bg-surface-elevated">
             {/* Services Page Dedicated Hero */}
             <section className="relative pt-40 pb-32 overflow-hidden border-b border-border">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-accent/5 blur-[120px] rounded-full z-0 pointer-events-none" />
@@ -115,14 +115,14 @@ export default function ServicesPage() {
                         variants={fadeUpVariant}
                         className="flex flex-col items-center"
                     >
-                        <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-accent/20 bg-card-bg text-accent text-sm font-bold tracking-widest uppercase">
+                        <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-accent/20 bg-card text-accent text-sm font-bold tracking-widest uppercase">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                             Engineering Excellence
                         </div>
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-heading text-heading mb-8 tracking-tighter leading-tight">
+                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-heading text-foreground mb-8 tracking-tighter leading-tight">
                             Strategic Servi<span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-accent/80">ces</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-subtext max-w-3xl mx-auto leading-relaxed font-medium">
+                        <p className="text-xl md:text-2xl text-foreground-muted max-w-3xl mx-auto leading-relaxed font-medium">
                             A comprehensive suite of digital solutions engineered to scale your business and dominate your competitive landscape.
                         </p>
                     </motion.div>
@@ -153,16 +153,16 @@ export default function ServicesPage() {
                                         </div>
 
                                         <div className="space-y-6">
-                                            <h2 className="text-4xl md:text-5xl font-black font-heading text-heading tracking-tight">
+                                            <h2 className="text-4xl md:text-5xl font-black font-heading text-foreground tracking-tight">
                                                 {service.title}
                                             </h2>
-                                            <p className="text-lg text-subtext leading-relaxed max-w-xl font-medium">
+                                            <p className="text-lg text-foreground-muted leading-relaxed max-w-xl font-medium">
                                                 {service.description}
                                             </p>
                                         </div>
 
                                         <div className="space-y-6">
-                                            <h4 className="text-[11px] font-bold text-heading uppercase tracking-[0.2em]">KEY OUTCOMES:</h4>
+                                            <h4 className="text-[11px] font-bold text-foreground uppercase tracking-[0.2em]">KEY OUTCOMES:</h4>
                                             <ul className="grid grid-cols-1 gap-4">
                                                 {service.outcomes.map((outcome, i) => (
                                                     <li key={i} className="flex items-center gap-3 text-gray-300">
@@ -193,7 +193,7 @@ export default function ServicesPage() {
 
                                 {/* Process Overview Column */}
                                 <motion.div variants={fadeUpVariant} className="flex-1 w-full">
-                                    <div className="bg-card-bg p-8 md:p-14 rounded-[40px] border border-border shadow-sm relative overflow-hidden group hover:border-accent/30 transition-all duration-700">
+                                    <div className="bg-card p-8 md:p-14 rounded-[40px] border border-border shadow-sm relative overflow-hidden group hover:border-accent/30 transition-all duration-700">
                                         {/* Background accent glow */}
                                         <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-[70px] pointer-events-none group-hover:bg-accent/10 transition-colors" />
 
@@ -203,7 +203,7 @@ export default function ServicesPage() {
 
                                         <div className="space-y-10 relative">
                                             {/* Vertical Timeline Line */}
-                                            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-glass z-0" />
+                                            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-card z-0" />
 
                                             {service.processSteps.map((step) => (
                                                 <div key={step.id} className="relative z-10 flex gap-8">
@@ -211,8 +211,8 @@ export default function ServicesPage() {
                                                         {step.id}
                                                     </div>
                                                     <div className="space-y-2 pt-1">
-                                                        <h5 className="text-xl font-bold text-heading tracking-tight">{step.title}</h5>
-                                                        <p className="text-subtext leading-relaxed text-base font-medium">{step.desc}</p>
+                                                        <h5 className="text-xl font-bold text-foreground tracking-tight">{step.title}</h5>
+                                                        <p className="text-foreground-muted leading-relaxed text-base font-medium">{step.desc}</p>
                                                     </div>
                                                 </div>
                                             ))}

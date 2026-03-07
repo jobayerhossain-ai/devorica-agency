@@ -16,10 +16,10 @@ export function ClientTrust() {
                             <div className="mb-4 p-3 rounded-full bg-accent/10">
                                 <Icon className="w-8 h-8 text-accent" aria-hidden="true" />
                             </div>
-                            <h3 className="text-xl font-bold font-heading text-heading mb-2">
+                            <h3 className="text-xl font-bold font-heading text-foreground mb-2">
                                 {stat.title}
                             </h3>
-                            <p className="text-subtext font-medium text-sm">
+                            <p className="text-foreground-muted font-medium text-sm">
                                 {stat.description}
                             </p>
                         </div>

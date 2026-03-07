@@ -1,44 +1,36 @@
 "use client";
 
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
-import { useTheme } from "@/components/providers/ThemeProvider";
-import { cn } from "@/utils/cn";
 
-export function ThemeToggle({ className }: { className?: string }) {
-    const { theme, toggleTheme } = useTheme();
+export function ThemeToggle() {
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => setMounted(true), []);
+
+    if (!mounted) {
+        return (
+            <button className="w-10 h-10 rounded-xl border border-border bg-surface-elevated flex items-center justify-center" aria-label="Toggle theme">
+                <div className="w-5 h-5" />
+            </button>
+        );
+    }
+
+    const isDark = theme === "dark";
 
     return (
         <button
-            onClick={toggleTheme}
-            className={cn(
-                "relative w-10 h-10 rounded-full flex items-center justify-center",
-                "border border-border bg-glass backdrop-blur-sm",
-                "hover:border-accent/50 hover:bg-accent/10",
-                "transition-all duration-300 cursor-pointer",
-                "group",
-                className
-            )}
-            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            onClick={() => setTheme(isDark ? "light" : "dark")}
+            className="w-10 h-10 rounded-xl border border-border bg-surface-elevated hover:bg-card-hover flex items-center justify-center transition-all duration-300 group"
+            aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
         >
-            {/* Sun icon - visible in dark mode */}
-            <Sun
-                className={cn(
-                    "w-[18px] h-[18px] absolute transition-all duration-300",
-                    theme === "dark"
-                        ? "opacity-100 rotate-0 scale-100 text-accent"
-                        : "opacity-0 rotate-90 scale-0 text-accent"
-                )}
-            />
-            {/* Moon icon - visible in light mode */}
-            <Moon
-                className={cn(
-                    "w-[18px] h-[18px] absolute transition-all duration-300",
-                    theme === "light"
-                        ? "opacity-100 rotate-0 scale-100 text-secondary-accent"
-                        : "opacity-0 -rotate-90 scale-0 text-secondary-accent"
-                )}
-            />
+            {isDark ? (
+                <Sun className="w-5 h-5 text-amber-400 group-hover:rotate-45 transition-transform duration-300" />
+            ) : (
+                <Moon className="w-5 h-5 text-indigo-500 group-hover:-rotate-12 transition-transform duration-300" />
+            )}
         </button>
     );
 }
