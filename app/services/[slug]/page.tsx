@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ServiceTemplate } from "../../../components/layout/ServiceTemplate";
 
@@ -139,6 +140,57 @@ export async function generateStaticParams() {
     return Object.keys(SERVICES_DB).map((slug) => ({
         slug,
     }));
+}
+
+const SEO_DATA: Record<string, { title: string, description: string, keywords: string[] }> = {
+    "custom-website": {
+        title: "Custom Website Development in Bangladesh | Devorica",
+        description: "Professional custom website development services for businesses in Bangladesh. Fast, scalable, and SEO optimized websites.",
+        keywords: ["custom website development bangladesh"]
+    },
+    "web-app-development": {
+        title: "Web Application Development in Bangladesh | Devorica",
+        description: "We develop powerful web applications using modern technologies for startups and businesses.",
+        keywords: ["web application development bangladesh"]
+    },
+    "landing-page": {
+        title: "Landing Page Development in Bangladesh | Devorica",
+        description: "High converting landing pages designed for marketing campaigns and product launches.",
+        keywords: ["landing page development bangladesh"]
+    },
+    "ecommerce-development": {
+        title: "Ecommerce Development in Bangladesh | Devorica",
+        description: "Premium ecommerce shopping experiences that build trust and maximize average order value.",
+        keywords: ["ecommerce development bangladesh", "ecommerce website development"]
+    },
+    "app-development": {
+        title: "App Development in Bangladesh | Devorica",
+        description: "High-performance cross-platform mobile app development services in Bangladesh.",
+        keywords: ["mobile app development bangladesh", "app development company"]
+    }
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const seo = SEO_DATA[slug];
+
+    if (!seo) {
+        return {
+            title: "Web Development Services | Devorica",
+            description: "Explore our premium web development services."
+        };
+    }
+
+    return {
+        title: seo.title,
+        description: seo.description,
+        keywords: seo.keywords,
+        openGraph: {
+            title: seo.title,
+            description: seo.description,
+            type: "website",
+        }
+    };
 }
 
 export default async function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {

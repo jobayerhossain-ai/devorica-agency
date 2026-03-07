@@ -3,11 +3,11 @@ import { BlogClient } from "./BlogClient";
 
 // SEO Metadata for the Blog Index
 export const metadata: Metadata = {
-    title: "Insight & Engineering Blog | Devorica",
-    description: "Read the latest insights on high-performance web development, Next.js architecture, scalable e-commerce, and modern UI/UX design from the engineering team at Devorica.",
+    title: "Web Development Blog | Devorica",
+    description: "Guides, tutorials, and insights about web development, website design, and modern technologies.",
     openGraph: {
-        title: "Devorica Engineering Blog",
-        description: "Technical deep-dives, case studies, and modern web development insights.",
+        title: "Web Development Blog | Devorica",
+        description: "Guides, tutorials, and insights about web development, website design, and modern technologies.",
         type: "website",
     }
 };

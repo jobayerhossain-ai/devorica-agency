@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,27 +20,33 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.devorica.com"),
   title: {
-    default: "Devorica | High-Performance Web Development Agency",
-    template: "%s | Devorica",
+    default: "Devorica — Custom Website Development Company in Bangladesh",
+    template: "%s",
   },
-  description: "Where Art Meets Engineering. We make world-class web development accessible to ambitious businesses — custom websites, web apps, ecommerce, and mobile apps.",
-  keywords: ["web development", "custom website", "web app", "ecommerce", "app development", "Next.js", "Bangladesh", "DevOrica"],
-  authors: [{ name: "DevOrica" }],
+  description: "Devorica builds high-performance custom websites, web applications, and landing pages for modern businesses in Bangladesh.",
+  keywords: [
+    "web development company bangladesh",
+    "website development company bangladesh",
+    "custom website development bangladesh",
+    "web application development bangladesh",
+    "landing page development bangladesh"
+  ],
+  authors: [{ name: "Devorica" }],
   icons: {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "Devorica | Where Art Meets Engineering",
-    description: "We make world-class web development accessible to ambitious businesses. Custom websites, web apps, ecommerce, and mobile solutions.",
+    title: "Devorica — Custom Website Development Company in Bangladesh",
+    description: "Devorica builds high-performance custom websites, web applications, and landing pages for modern businesses in Bangladesh.",
     url: "https://www.devorica.com",
-    siteName: "DevOrica",
+    siteName: "Devorica",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Devorica | Where Art Meets Engineering",
-    description: "We make world-class web development accessible to ambitious businesses.",
+    title: "Devorica — Custom Website Development Company in Bangladesh",
+    description: "Devorica builds high-performance custom websites, web applications, and landing pages for modern businesses in Bangladesh.",
   },
   robots: {
     index: true,
@@ -62,6 +69,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+        <Script id="schema-global" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Devorica",
+            "url": "https://www.devorica.com",
+            "logo": "https://www.devorica.com/logo.png",
+            "sameAs": []
+          })
+        }} />
         <ThemeProvider>
           <Preloader />
           <SmoothScrolling>
