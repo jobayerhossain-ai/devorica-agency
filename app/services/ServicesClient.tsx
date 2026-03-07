@@ -14,7 +14,7 @@ const DETAILED_SERVICES = [
         title: "Custom Website Development",
         description: "Transform your brand with a high-performance digital asset. We engineer cinematic web experiences that combine artistic design with precision engineering to command market authority.",
         icon: Globe,
-        href: "/services/custom-website",
+        href: "/services/custom-website-development",
         outcomes: [
             "SEO-optimized 'industrial-grade' architecture",
             "Sub-second delivery via global edge networks",
@@ -32,7 +32,7 @@ const DETAILED_SERVICES = [
         title: "Web App Development",
         description: "Industrial-grade applications engineered for scale, security, and peak operational performance. We build robust SaaS platforms and internal tools that streamline complex business logic.",
         icon: Code,
-        href: "/services/web-app-development",
+        href: "/services/web-application-development",
         outcomes: [
             "99.9% Uptime SLA for critical operations",
             "Bank-grade security with AES-256 encryption",
@@ -50,7 +50,7 @@ const DETAILED_SERVICES = [
         title: "Landing Page Development",
         description: "Hyper-optimized experiences designed with conversion psychology to turn visitors into high-value customers. Perfect for high-stakes marketing campaigns and product launches.",
         icon: Rocket,
-        href: "/services/landing-page",
+        href: "/services/landing-page-development",
         outcomes: [
             "9.8% Average conversion rate increase",
             "Instant loading (< 1s) on mobile devices",

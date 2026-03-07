@@ -18,9 +18,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
 
     const serviceSlugRoutes = [
-        'custom-website',
-        'web-app-development',
-        'landing-page',
+        'custom-website-development',
+        'web-application-development',
+        'landing-page-development',
         'ecommerce-development',
         'app-development',
     ].map((slug) => ({
@@ -30,5 +30,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9,
     }));
 
-    return [...staticRoutes, ...serviceSlugRoutes];
+    const blogPostRoutes = [
+        '/blog/website-development-cost-bangladesh',
+        '/blog/custom-website-vs-wordpress',
+        '/blog/landing-page-design-guide',
+        '/blog/web-application-vs-website',
+    ].map((route) => ({
+        url: `${baseUrl}${route}`,
+        lastModified: new Date().toISOString().split('T')[0],
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }));
+
+    return [...staticRoutes, ...serviceSlugRoutes, ...blogPostRoutes];
 }

@@ -67,19 +67,19 @@ export const NAV_LINKS: NavLink[] = [
 export const SERVICES: Service[] = [
     {
         title: "Custom Website",
-        href: "/services/custom-website",
+        href: "/services/custom-website-development",
         description: "Cinematic, high-performance web experiences that convert.",
         icon: Globe,
     },
     {
         title: "Web App Development",
-        href: "/services/web-app-development",
+        href: "/services/web-application-development",
         description: "Industrial-grade SaaS platforms and internal tools.",
         icon: Code,
     },
     {
         title: "Landing Page",
-        href: "/services/landing-page",
+        href: "/services/landing-page-development",
         description: "Hyper-optimized pages designed for maximum conversion.",
         icon: Rocket,
     },

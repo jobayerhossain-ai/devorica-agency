@@ -4,7 +4,7 @@ import { ServiceTemplate } from "../../../components/layout/ServiceTemplate";
 
 // Static database of official DevOrica services synced with the 5-service list
 export const SERVICES_DB = {
-    "custom-website": {
+    "custom-website-development": {
         title: "Custom Website",
         description: "Transform your brand with a high-performance digital asset. We engineer cinematic web experiences that combine artistic design with precision engineering to command market authority.",
         features: [
@@ -30,7 +30,7 @@ export const SERVICES_DB = {
         ],
         techStack: ["Next.js 15", "Tailwind CSS", "Framer Motion", "TypeScript", "Sanity CMS", "Vercel Edge"],
     },
-    "web-app-development": {
+    "web-application-development": {
         title: "Web App Development",
         description: "Industrial-grade applications engineered for scale, security, and peak operational performance. We build robust SaaS platforms and internal tools that streamline complex business logic.",
         features: [
@@ -56,7 +56,7 @@ export const SERVICES_DB = {
         ],
         techStack: ["React 19", "Node.js", "PostgreSQL", "Next.js", "Redis", "Docker", "Kubernetes"],
     },
-    "landing-page": {
+    "landing-page-development": {
         title: "Landing Page",
         description: "Hyper-optimized experiences designed with conversion psychology to turn visitors into high-value customers efficienty. Perfect for high-stakes marketing and product launches.",
         features: [
@@ -143,17 +143,17 @@ export async function generateStaticParams() {
 }
 
 const SEO_DATA: Record<string, { title: string, description: string, keywords: string[] }> = {
-    "custom-website": {
+    "custom-website-development": {
         title: "Custom Website Development in Bangladesh | Devorica",
         description: "Professional custom website development services for businesses in Bangladesh. Fast, scalable, and SEO optimized websites.",
         keywords: ["custom website development bangladesh"]
     },
-    "web-app-development": {
+    "web-application-development": {
         title: "Web Application Development in Bangladesh | Devorica",
         description: "We develop powerful web applications using modern technologies for startups and businesses.",
         keywords: ["web application development bangladesh"]
     },
-    "landing-page": {
+    "landing-page-development": {
         title: "Landing Page Development in Bangladesh | Devorica",
         description: "High converting landing pages designed for marketing campaigns and product launches.",
         keywords: ["landing page development bangladesh"]

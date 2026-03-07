@@ -70,14 +70,61 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
         <Script id="schema-global" type="application/ld+json" strategy="afterInteractive" dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Devorica",
-            "url": "https://www.devorica.com",
-            "logo": "https://www.devorica.com/logo.png",
-            "sameAs": []
-          })
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Devorica",
+              "url": "https://www.devorica.com",
+              "logo": "https://www.devorica.com/logo.png",
+              "sameAs": []
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Devorica",
+              "url": "https://www.devorica.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.devorica.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Devorica",
+              "image": "https://www.devorica.com/logo.png",
+              "@id": "https://www.devorica.com",
+              "url": "https://www.devorica.com",
+              "telephone": "+8801619504428",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Feni Sadar",
+                "addressLocality": "Feni",
+                "addressRegion": "Chittagong",
+                "postalCode": "3900",
+                "addressCountry": "BD"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 23.0159,
+                "longitude": 91.3976
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            }
+          ])
         }} />
         <ThemeProvider>
           <Preloader />
