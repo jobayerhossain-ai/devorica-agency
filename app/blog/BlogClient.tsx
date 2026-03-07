@@ -8,83 +8,27 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { BLOG_POSTS } from "@/constants/blog";
 
-// Placeholder Blog Data
-const BLOG_POSTS = [
-    {
-        id: "1",
-        title: "The Architecture of a 100/100 Lighthouse Next.js Application",
-        excerpt: "A deep dive into how we utilize Server Components, dynamic streaming, and edge caching to achieve perfect Lighthouse scores for our enterprise clients.",
-        category: "Engineering",
-        author: "Alex Rivera",
-        date: "Oct 24, 2024",
-        readTime: "8 min read",
-        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800",
-        href: "/blog/nextjs-lighthouse-architecture"
-    },
-    {
-        id: "2",
-        title: "Why Headless Commerce is the Future of Retail",
-        excerpt: "Decoupling your frontend from your Shopify or BigCommerce backend is the ultimate key to unlocking sub-second load times and higher conversion rates.",
-        category: "E-Commerce",
-        author: "Sarah Jenkins",
-        date: "Oct 18, 2024",
-        readTime: "6 min read",
-        image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800",
-        href: "/blog/headless-commerce-future"
-    },
-    {
-        id: "3",
-        title: "Mastering Framer Motion for High-End Agency Websites",
-        excerpt: "Learn the exact techniques we use to build highly performant, scroll-linked, and GPU-accelerated micro-interactions across our client portfolio.",
-        category: "Design",
-        author: "Michael Chen",
-        date: "Oct 12, 2024",
-        readTime: "10 min read",
-        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&q=80&w=800",
-        href: "/blog/mastering-framer-motion"
-    },
-    {
-        id: "4",
-        title: "Migrating from monolith to microservices using Node.js",
-        excerpt: "An architectural breakdown of splitting scalable business logic across independent, Dockerized Node.js containers.",
-        category: "Backend",
-        author: "Elena Rossi",
-        date: "Oct 05, 2024",
-        readTime: "12 min read",
-        image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=800",
-        href: "/blog/nodejs-microservices"
-    },
-    {
-        id: "5",
-        title: "State Management in React App: Zustand vs Redux Toolkit",
-        excerpt: "Analyzing the performance overhead and developer experience (DX) when choosing global state tools in 2024.",
-        category: "Engineering",
-        author: "James Wilson",
-        date: "Sep 28, 2024",
-        readTime: "7 min read",
-        image: "https://images.unsplash.com/photo-1510915228340-29c0bac81f1f?auto=format&fit=crop&q=80&w=800",
-        href: "/blog/zustand-vs-redux"
-    },
-    {
-        id: "6",
-        title: "Designing for Conversion: The Psychology of Dark Mode",
-        excerpt: "How to effectively utilize negative space, typography weights, and accent glows in dark themes to drive CTA clicks.",
-        category: "Design",
-        author: "Sarah Jenkins",
-        date: "Sep 20, 2024",
-        readTime: "5 min read",
-        image: "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&q=80&w=800",
-        href: "/blog/psychology-of-dark-mode"
-    }
-];
+// Map the SEO database to the display format
+const ALL_POSTS = Object.values(BLOG_POSTS).map(post => ({
+    id: post.slug,
+    title: post.title,
+    excerpt: post.description,
+    category: post.category,
+    author: "Devorica Team",
+    date: new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    readTime: post.readingTime,
+    image: post.image.url,
+    href: `/blog/${post.slug}`
+}));
 
 const POSTS_PER_PAGE = 6;
 
 export function BlogClient() {
     const [currentPage, setCurrentPage] = useState(1);
-    const totalPages = Math.ceil(BLOG_POSTS.length / POSTS_PER_PAGE);
-    const currentPosts = BLOG_POSTS.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
+    const totalPages = Math.ceil(ALL_POSTS.length / POSTS_PER_PAGE);
+    const currentPosts = ALL_POSTS.slice((currentPage - 1) * POSTS_PER_PAGE, currentPage * POSTS_PER_PAGE);
 
     return (
         <div className="bg-surface-elevated">

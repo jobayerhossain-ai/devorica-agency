@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { BLOG_POSTS } from '@/constants/blog';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://www.devorica.com';
@@ -30,14 +31,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.9,
     }));
 
-    const blogPostRoutes = [
-        '/blog/website-development-cost-bangladesh',
-        '/blog/custom-website-vs-wordpress',
-        '/blog/landing-page-design-guide',
-        '/blog/web-application-vs-website',
-    ].map((route) => ({
-        url: `${baseUrl}${route}`,
-        lastModified: new Date().toISOString().split('T')[0],
+    const blogPostRoutes = Object.keys(BLOG_POSTS).map((slug) => ({
+        url: `${baseUrl}/blog/${slug}`,
+        lastModified: BLOG_POSTS[slug].publishDate,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }));
