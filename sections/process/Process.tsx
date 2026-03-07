@@ -17,7 +17,7 @@ export function Process() {
             {/* Horizontal Timeline */}
             <div className="relative mt-20">
                 {/* Connecting Line */}
-                <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-0.5 bg-[#1F2937]" />
+                <div className="hidden lg:block absolute top-[28px] left-[10%] right-[10%] h-0.5 bg-border" />
 
                 <AnimatedReveal
                     initial={{ scaleX: 0 }}
@@ -36,10 +36,10 @@ export function Process() {
                             className="flex flex-col items-center text-center group"
                         >
                             {/* Step Node */}
-                            <div className="w-14 h-14 rounded-full bg-[#1F2937] border-2 border-[#374151] flex items-center justify-center text-white font-bold font-heading mb-6 group-hover:border-accent group-hover:bg-accent/10 group-hover:text-accent transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(0,0,0,0.5)]">
+                            <div className="w-14 h-14 rounded-full bg-border border-2 border-border flex items-center justify-center text-heading font-bold font-heading mb-6 group-hover:border-accent group-hover:bg-accent/10 group-hover:text-accent transition-all duration-300 relative z-10 shadow-[0_0_15px_rgba(0,0,0,0.3)]">
                                 {item.step}
                             </div>
-                            <h3 className="text-xl font-bold font-heading text-white mb-3 transition-colors group-hover:text-accent">{item.title}</h3>
+                            <h3 className="text-xl font-bold font-heading text-heading mb-3 transition-colors group-hover:text-accent">{item.title}</h3>
                             <p className="text-subtext text-sm">{item.desc}</p>
                         </div>
                     ))}

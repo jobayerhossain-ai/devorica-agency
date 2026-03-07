@@ -28,7 +28,7 @@ export function ScrollToTop() {
                     transition={{ duration: 0.3 }}
                     onClick={scrollToTop}
                     aria-label="Scroll to top"
-                    className="cursor-pointer fixed bottom-8 right-8 z-50 after:content-['scroll\_to\_top'] after:text-white after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 after:duration-200 w-14 h-14 rounded-full border-4 border-accent/40 bg-[#0F172A] flex items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 group/button overflow-hidden active:scale-90 shadow-2xl shadow-black/60 hover:border-accent/60"
+                    className="cursor-pointer fixed bottom-8 right-8 z-50 after:content-['scroll\_to\_top'] after:text-heading after:absolute after:text-nowrap after:scale-0 hover:after:scale-100 after:duration-200 w-14 h-14 rounded-full border-4 border-accent/40 bg-surface flex items-center justify-center duration-300 hover:rounded-[50px] hover:w-36 group/button overflow-hidden active:scale-90 shadow-2xl shadow-black/30 hover:border-accent/60"
                 >
                     <svg
                         className="w-3 fill-white delay-50 duration-200 group-hover/button:-translate-y-12"

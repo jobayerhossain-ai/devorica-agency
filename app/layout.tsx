@@ -52,6 +52,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { Preloader } from "@/components/ui/Preloader";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 export default function RootLayout({
   children,
@@ -59,20 +60,37 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="no-transition" suppressHydrationWarning>
+      <head>
+        {/* Anti-FOUC: set theme class before first paint */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme === 'light') {
+                    document.documentElement.classList.add('light');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
-        <Preloader />
-        <SmoothScrolling>
-          <Navbar />
-          <main className="min-h-screen pt-[80px]">
-            {children}
-          </main>
-          <Footer />
-          <ScrollToTop />
-        </SmoothScrolling>
+        <ThemeProvider>
+          <Preloader />
+          <SmoothScrolling>
+            <Navbar />
+            <main className="min-h-screen pt-[80px]">
+              {children}
+            </main>
+            <Footer />
+            <ScrollToTop />
+          </SmoothScrolling>
+        </ThemeProvider>
       </body>
     </html>
   );
 }
-
-

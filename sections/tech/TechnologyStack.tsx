@@ -22,7 +22,7 @@ export function TechnologyStack() {
                 {TECH_STACK.map((tech, index) => (
                     <div
                         key={index}
-                        className="group flex flex-col items-center justify-center p-8 bg-[#0F172A] border border-[#1F2937] rounded-2xl relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-accent/50 cursor-default"
+                        className="group flex flex-col items-center justify-center p-8 bg-card-bg border border-border rounded-2xl relative overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:border-accent/50 cursor-default"
                     >
                         {/* Hover Ambient Glow */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-accent/20 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
@@ -37,7 +37,7 @@ export function TechnologyStack() {
                                 unoptimized
                             />
                         </div>
-                        <span className="text-subtext font-medium group-hover:text-white transition-colors duration-300 relative z-10 text-center text-sm md:text-base">
+                        <span className="text-subtext font-medium group-hover:text-heading transition-colors duration-300 relative z-10 text-center text-sm md:text-base">
                             {tech.name}
                         </span>
                     </div>

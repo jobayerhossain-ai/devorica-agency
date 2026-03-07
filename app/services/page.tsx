@@ -103,9 +103,9 @@ const DETAILED_SERVICES = [
 
 export default function ServicesPage() {
     return (
-        <div className="bg-[#0B0B0B]">
+        <div className="bg-surface-alt">
             {/* Services Page Dedicated Hero */}
-            <section className="relative pt-40 pb-32 overflow-hidden border-b border-[#1F2937]">
+            <section className="relative pt-40 pb-32 overflow-hidden border-b border-border">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[500px] bg-accent/5 blur-[120px] rounded-full z-0 pointer-events-none" />
 
                 <div className="max-w-[1280px] mx-auto px-6 text-center relative z-10">
@@ -115,14 +115,14 @@ export default function ServicesPage() {
                         variants={fadeUpVariant}
                         className="flex flex-col items-center"
                     >
-                        <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-accent/20 bg-[#0F172A] text-accent text-sm font-bold tracking-widest uppercase">
+                        <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full border border-accent/20 bg-card-bg text-accent text-sm font-bold tracking-widest uppercase">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                             Engineering Excellence
                         </div>
-                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-heading text-white mb-8 tracking-tighter leading-tight">
+                        <h1 className="text-6xl md:text-7xl lg:text-8xl font-black font-heading text-heading mb-8 tracking-tighter leading-tight">
                             Strategic Servi<span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-accent/80">ces</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-medium">
+                        <p className="text-xl md:text-2xl text-subtext max-w-3xl mx-auto leading-relaxed font-medium">
                             A comprehensive suite of digital solutions engineered to scale your business and dominate your competitive landscape.
                         </p>
                     </motion.div>
@@ -148,21 +148,21 @@ export default function ServicesPage() {
                                 {/* Content Column */}
                                 <motion.div variants={fadeUpVariant} className="flex-1 w-full">
                                     <div className="flex flex-col gap-8">
-                                        <div className="w-14 h-14 rounded-2xl border border-[#374151] bg-[#1F2937] flex items-center justify-center text-accent/80 group-hover:text-accent transition-colors shadow-2xl shadow-black/40">
+                                        <div className="w-14 h-14 rounded-2xl border border-border bg-[#1F2937] flex items-center justify-center text-accent/80 group-hover:text-accent transition-colors shadow-2xl shadow-black/40">
                                             <Icon className="w-7 h-7" />
                                         </div>
 
                                         <div className="space-y-6">
-                                            <h2 className="text-4xl md:text-5xl font-black font-heading text-white tracking-tight">
+                                            <h2 className="text-4xl md:text-5xl font-black font-heading text-heading tracking-tight">
                                                 {service.title}
                                             </h2>
-                                            <p className="text-lg text-[#9CA3AF] leading-relaxed max-w-xl font-medium">
+                                            <p className="text-lg text-subtext leading-relaxed max-w-xl font-medium">
                                                 {service.description}
                                             </p>
                                         </div>
 
                                         <div className="space-y-6">
-                                            <h4 className="text-[11px] font-bold text-white uppercase tracking-[0.2em]">KEY OUTCOMES:</h4>
+                                            <h4 className="text-[11px] font-bold text-heading uppercase tracking-[0.2em]">KEY OUTCOMES:</h4>
                                             <ul className="grid grid-cols-1 gap-4">
                                                 {service.outcomes.map((outcome, i) => (
                                                     <li key={i} className="flex items-center gap-3 text-gray-300">
@@ -193,7 +193,7 @@ export default function ServicesPage() {
 
                                 {/* Process Overview Column */}
                                 <motion.div variants={fadeUpVariant} className="flex-1 w-full">
-                                    <div className="bg-[#0F172A] p-8 md:p-14 rounded-[40px] border border-[#1F2937] shadow-sm relative overflow-hidden group hover:border-accent/30 transition-all duration-700">
+                                    <div className="bg-card-bg p-8 md:p-14 rounded-[40px] border border-border shadow-sm relative overflow-hidden group hover:border-accent/30 transition-all duration-700">
                                         {/* Background accent glow */}
                                         <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-full blur-[70px] pointer-events-none group-hover:bg-accent/10 transition-colors" />
 
@@ -203,16 +203,16 @@ export default function ServicesPage() {
 
                                         <div className="space-y-10 relative">
                                             {/* Vertical Timeline Line */}
-                                            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-white/5 z-0" />
+                                            <div className="absolute left-[19px] top-6 bottom-6 w-px bg-glass z-0" />
 
                                             {service.processSteps.map((step) => (
                                                 <div key={step.id} className="relative z-10 flex gap-8">
-                                                    <div className="w-10 h-10 rounded-full bg-[#1F2937] border border-[#374151] flex items-center justify-center shrink-0 text-accent font-bold text-sm shadow-xl group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-500">
+                                                    <div className="w-10 h-10 rounded-full bg-[#1F2937] border border-border flex items-center justify-center shrink-0 text-accent font-bold text-sm shadow-xl group-hover:border-accent/40 group-hover:bg-accent/10 transition-all duration-500">
                                                         {step.id}
                                                     </div>
                                                     <div className="space-y-2 pt-1">
-                                                        <h5 className="text-xl font-bold text-white tracking-tight">{step.title}</h5>
-                                                        <p className="text-[#9CA3AF] leading-relaxed text-base font-medium">{step.desc}</p>
+                                                        <h5 className="text-xl font-bold text-heading tracking-tight">{step.title}</h5>
+                                                        <p className="text-subtext leading-relaxed text-base font-medium">{step.desc}</p>
                                                     </div>
                                                 </div>
                                             ))}

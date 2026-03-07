@@ -44,7 +44,7 @@ export function AboutClient() {
     return (
         <>
             {/* About Hero Section */}
-            <section className="relative pt-32 pb-24 bg-[#0F172A] border-b border-[#1F2937] overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-card-bg border-b border-border overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-accent/10 blur-[120px] rounded-full z-0 pointer-events-none" />
 
                 <div className="max-w-[1280px] mx-auto px-6 relative z-10">
@@ -59,7 +59,7 @@ export function AboutClient() {
                                     Our Story
                                 </span>
                             </div>
-                            <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight leading-tight">
+                            <h1 className="text-5xl md:text-6xl font-bold font-heading text-heading mb-6 tracking-tight leading-tight">
                                 We engineer <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary-accent">digital excellence.</span>
                             </h1>
                             <p className="text-xl text-subtext leading-relaxed">
@@ -74,7 +74,7 @@ export function AboutClient() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-                            className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-[#1F2937] shadow-2xl"
+                            className="relative w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-2xl"
                         >
                             <Image
                                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200"
@@ -84,8 +84,8 @@ export function AboutClient() {
                                 priority
                             />
                             {/* Glassmorphic overlay piece */}
-                            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-[#0B0B0B]/70 backdrop-blur-md border border-white/10">
-                                <p className="text-white font-medium text-lg">&quot;Code is poetry, but performance is business.&quot;</p>
+                            <div className="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-surface-alt/70 backdrop-blur-md border border-glass-border">
+                                <p className="text-heading font-medium text-lg">&quot;Code is poetry, but performance is business.&quot;</p>
                             </div>
                         </motion.div>
                     </div>
@@ -93,7 +93,7 @@ export function AboutClient() {
             </section>
 
             {/* Mission & Values Section */}
-            <section className="py-24 bg-[#0B0B0B] border-b border-[#1F2937]">
+            <section className="py-24 bg-surface-alt border-b border-border">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <motion.div
                         initial="hidden"
@@ -120,12 +120,12 @@ export function AboutClient() {
                             <motion.div
                                 key={idx}
                                 variants={fadeUpVariant}
-                                className="bg-[#0F172A] p-8 rounded-2xl border border-[#1F2937] hover:border-accent/30 transition-colors group"
+                                className="bg-card-bg p-8 rounded-2xl border border-border hover:border-accent/30 transition-colors group"
                             >
                                 <div className="w-14 h-14 rounded-xl bg-[#1F2937] flex items-center justify-center mb-6 group-hover:bg-accent/10 transition-colors">
-                                    <val.icon className="w-7 h-7 text-white group-hover:text-accent transition-colors" />
+                                    <val.icon className="w-7 h-7 text-heading group-hover:text-accent transition-colors" />
                                 </div>
-                                <h3 className="text-2xl font-bold font-heading text-white mb-4">{val.title}</h3>
+                                <h3 className="text-2xl font-bold font-heading text-heading mb-4">{val.title}</h3>
                                 <p className="text-subtext leading-relaxed">{val.description}</p>
                             </motion.div>
                         ))}
@@ -134,7 +134,7 @@ export function AboutClient() {
             </section>
 
             {/* Leadership / Team Section */}
-            <section className="py-24 bg-[#0F172A]">
+            <section className="py-24 bg-card-bg">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <motion.div
                         initial="hidden"
@@ -162,7 +162,7 @@ export function AboutClient() {
                                 variants={fadeUpVariant}
                                 className="group relative max-w-[300px] w-full"
                             >
-                                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-[#1F2937] border border-[#1F2937] group-hover:border-accent/40 transition-colors">
+                                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-6 bg-[#1F2937] border border-border group-hover:border-accent/40 transition-colors">
                                     <Image
                                         src={member.image}
                                         alt={member.name}
@@ -174,22 +174,22 @@ export function AboutClient() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
                                         <div className="flex gap-4">
                                             {member.socials.facebook && (
-                                                <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-[#0B0B0B] text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300">
+                                                <a href={member.socials.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-300">
                                                     <Facebook className="w-5 h-5" />
                                                 </a>
                                             )}
                                             {member.socials.instagram && (
-                                                <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-[#0B0B0B] text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
+                                                <a href={member.socials.instagram} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-500">
                                                     <Instagram className="w-5 h-5" />
                                                 </a>
                                             )}
                                             {member.socials.github && (
-                                                <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-[#0B0B0B] text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-700">
+                                                <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-700">
                                                     <Github className="w-5 h-5" />
                                                 </a>
                                             )}
                                             {member.socials.linkedin && (
-                                                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-[#0B0B0B] text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-1000">
+                                                <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/10 hover:bg-accent hover:text-black text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-1000">
                                                     <Linkedin className="w-5 h-5" />
                                                 </a>
                                             )}
@@ -197,7 +197,7 @@ export function AboutClient() {
                                     </div>
                                 </div>
                                 <div className="text-center">
-                                    <h3 className="text-xl font-bold font-heading text-white mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
+                                    <h3 className="text-xl font-bold font-heading text-heading mb-1 group-hover:text-accent transition-colors">{member.name}</h3>
                                     <p className="text-sm font-medium text-subtext">{member.role}</p>
                                 </div>
                             </motion.div>

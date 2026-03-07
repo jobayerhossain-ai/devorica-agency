@@ -17,6 +17,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { NAV_LINKS, SERVICES } from "@/constants/data";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +55,7 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
                 scrolled
-                    ? "bg-[#0F172A]/80 backdrop-blur-md border-b border-[#1F2937]/50 shadow-sm py-3"
+                    ? "bg-nav-bg backdrop-blur-md border-b border-border/50 shadow-sm py-3"
                     : "bg-transparent py-5"
             )}
         >
@@ -98,16 +99,16 @@ export function Navbar() {
                                                     <NavigationMenuLink asChild>
                                                         <Link
                                                             href={service.href}
-                                                            className="group/item flex items-start gap-3 select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-white/5 focus:bg-white/5"
+                                                            className="group/item flex items-start gap-3 select-none rounded-lg p-3 leading-none no-underline outline-none transition-colors hover:bg-glass focus:bg-glass"
                                                         >
                                                             <div className="w-9 h-9 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-0.5 group-hover/item:bg-accent/20 transition-colors">
                                                                 <Icon aria-hidden="true" className="w-4 h-4 text-accent" />
                                                             </div>
                                                             <div className="flex flex-col gap-1">
-                                                                <div className="text-sm font-semibold leading-none text-white">
+                                                                <div className="text-sm font-semibold leading-none text-heading">
                                                                     {service.title}
                                                                 </div>
-                                                                <p className="line-clamp-2 text-xs leading-snug text-[#9CA3AF]">
+                                                                <p className="line-clamp-2 text-xs leading-snug text-subtext">
                                                                     {service.description}
                                                                 </p>
                                                             </div>
@@ -120,7 +121,7 @@ export function Navbar() {
                                             <NavigationMenuLink asChild>
                                                 <Link
                                                     href="/services"
-                                                    className="flex items-center justify-center rounded-lg p-3 text-xs font-bold text-accent uppercase tracking-widest hover:bg-accent/5 transition-colors border-t border-white/5 mt-1"
+                                                    className="flex items-center justify-center rounded-lg p-3 text-xs font-bold text-accent uppercase tracking-widest hover:bg-accent/5 transition-colors border-t border-glass-border mt-1"
                                                 >
                                                     View All Services →
                                                 </Link>
@@ -147,26 +148,30 @@ export function Navbar() {
                     </NavigationMenu>
                 </div>
 
-                {/* Desktop CTA */}
-                <div className="hidden lg:flex items-center">
+                {/* Desktop CTA + Theme Toggle */}
+                <div className="hidden lg:flex items-center gap-3">
+                    <ThemeToggle />
                     <Link href="/contact">
                         <Button variant="cta">Start Project</Button>
                     </Link>
                 </div>
 
-                {/* Mobile Menu Toggle */}
-                <button
-                    className="lg:hidden relative z-[1000] p-2 text-white outline-none"
-                    onClick={() => setIsOpen(!isOpen)}
-                    aria-label="Toggle Menu"
-                    aria-expanded={isOpen}
-                >
-                    <div className={cn("hamburger-toggle", isOpen && "is-open")}>
-                        <span className="bar" />
-                        <span className="bar" />
-                        <span className="bar" />
-                    </div>
-                </button>
+                {/* Mobile: Theme Toggle + Hamburger */}
+                <div className="lg:hidden flex items-center gap-3 relative z-[1000]">
+                    <ThemeToggle />
+                    <button
+                        className="p-2 text-heading outline-none"
+                        onClick={() => setIsOpen(!isOpen)}
+                        aria-label="Toggle Menu"
+                        aria-expanded={isOpen}
+                    >
+                        <div className={cn("hamburger-toggle", isOpen && "is-open")}>
+                            <span className="bar" />
+                            <span className="bar" />
+                            <span className="bar" />
+                        </div>
+                    </button>
+                </div>
 
                 {/* Mobile Navigation */}
                 <AnimatePresence>
@@ -176,7 +181,7 @@ export function Navbar() {
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 1.1 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="fixed inset-0 bg-[#0F172A] z-[999] flex flex-col items-center justify-center lg:hidden"
+                            className="fixed inset-0 bg-primary z-[999] flex flex-col items-center justify-center lg:hidden"
                         >
                             <nav className="flex flex-col items-center gap-8">
                                 {mobileNavLinks.map((link, i) => {
@@ -193,7 +198,7 @@ export function Navbar() {
                                                 onClick={() => setIsOpen(false)}
                                                 className={cn(
                                                     "text-2xl font-heading font-medium transition-colors",
-                                                    isActive ? "text-accent" : "text-white hover:text-accent"
+                                                    isActive ? "text-accent" : "text-heading hover:text-accent"
                                                 )}
                                             >
                                                 {link.label}

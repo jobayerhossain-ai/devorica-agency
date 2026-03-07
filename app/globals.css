@@ -2,21 +2,82 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0B0B0B;
-  --color-background: #0F172A;
+  --color-primary: var(--theme-primary);
+  --color-background: var(--theme-background);
+  --color-surface: var(--theme-surface);
+  --color-surface-alt: var(--theme-surface-alt);
   --color-accent: #00E5FF;
   --color-secondary-accent: #6366F1;
-  --color-text: #E5E7EB;
-  --color-subtext: #9CA3AF;
-  --color-border: #1F2937;
+  --color-text: var(--theme-text);
+  --color-heading: var(--theme-heading);
+  --color-subtext: var(--theme-subtext);
+  --color-border: var(--theme-border);
+  --color-card-bg: var(--theme-card-bg);
+  --color-nav-bg: var(--theme-nav-bg);
+  --color-glass: var(--theme-glass);
+  --color-glass-border: var(--theme-glass-border);
 
   --font-heading: var(--font-space-grotesk);
   --font-body: var(--font-inter);
 }
 
+/* ========================================
+   THEME DEFINITIONS
+   Default = dark, .light class = light mode
+   ======================================== */
+
+:root {
+  /* Dark mode values (default) */
+  --theme-primary: #0B0B0B;
+  --theme-background: #0F172A;
+  --theme-surface: #0F172A;
+  --theme-surface-alt: #0B0B0B;
+  --theme-text: #E5E7EB;
+  --theme-heading: #FFFFFF;
+  --theme-subtext: #9CA3AF;
+  --theme-border: #1F2937;
+  --theme-card-bg: #0F172A;
+  --theme-nav-bg: rgba(15, 23, 42, 0.8);
+  --theme-glass: rgba(255, 255, 255, 0.05);
+  --theme-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  --theme-primary: #F3EEFD;
+  --theme-background: #F3EEFD;
+  --theme-surface: #FFFFFF;
+  --theme-surface-alt: #EDE8F5;
+  --theme-text: #1A1A2E;
+  --theme-heading: #0F0F1A;
+  --theme-subtext: #64748B;
+  --theme-border: #D8D0E8;
+  --theme-card-bg: #FFFFFF;
+  --theme-nav-bg: rgba(243, 238, 253, 0.85);
+  --theme-glass: rgba(0, 0, 0, 0.03);
+  --theme-glass-border: rgba(0, 0, 0, 0.08);
+}
+
+/* ========================================
+   SMOOTH THEME TRANSITION
+   ======================================== */
+*,
+*::before,
+*::after {
+  transition-property: background-color, color, border-color, box-shadow, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+
+/* Disable transitions during initial load to prevent FOUC flash effect */
+.no-transition *,
+.no-transition *::before,
+.no-transition *::after {
+  transition: none !important;
+}
+
 @layer base {
   body {
-    @apply bg-background text-text font-body antialiased;
+    @apply bg-primary text-text font-body antialiased;
   }
 
   h1,
@@ -25,12 +86,12 @@
   h4,
   h5,
   h6 {
-    @apply font-heading text-text;
+    @apply font-heading text-heading;
   }
 }
 
 @utility glass-panel {
-  @apply bg-white/5 backdrop-blur-md border border-white/10;
+  @apply bg-glass backdrop-blur-md border border-glass-border;
 }
 
 /* Social Icons — adapted from Uiverse.io/firemonste_8052 */
@@ -39,7 +100,7 @@
   align-items: center;
   gap: 0;
   list-style: none;
-  background-color: #111827;
+  background-color: var(--theme-surface);
   border-radius: 30px;
   padding: 10px 16px;
 }
@@ -54,8 +115,8 @@
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
-  color: #000;
+  background-color: var(--theme-heading);
+  color: var(--theme-primary);
   padding: 5px 10px;
   border-radius: 5px;
   opacity: 0;
@@ -80,7 +141,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: #9CA3AF;
+  color: var(--theme-subtext);
   transition: all 0.3s ease-in-out;
 }
 
@@ -119,7 +180,7 @@
   width: 100%;
   height: 2.5px;
   border-radius: 50px;
-  background-color: white;
+  background-color: var(--theme-heading);
   transition: all 0.4s ease;
   transform-origin: center;
 }
@@ -145,7 +206,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #0F172A;
+  background-color: var(--theme-background);
   transition: opacity 0.5s ease-out, visibility 0.5s;
 }
 
@@ -274,4 +335,78 @@
     opacity: 1;
     transform: translateX(-50%) scale(1);
   }
+}
+
+/* CTA Button Styles */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: #000;
+  cursor: pointer;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-button:hover {
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.cta-button .cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-icon {
+  transform: translateX(3px);
+}
+
+.cta-button-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--theme-heading);
+  border: 1.5px solid var(--theme-border);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-button-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+.cta-button-outline .cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--theme-glass);
+  transition: transform 0.3s ease;
+}
+
+.cta-button-outline:hover .cta-icon {
+  transform: translateX(3px);
 }

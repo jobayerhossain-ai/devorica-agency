@@ -35,7 +35,7 @@ export function ContactClient() {
     return (
         <>
             {/* Contact Hero Section */}
-            <section className="relative pt-32 pb-24 bg-[#0F172A] border-b border-[#1F2937] overflow-hidden">
+            <section className="relative pt-32 pb-24 bg-card-bg border-b border-border overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-accent/10 blur-[120px] rounded-full z-0 pointer-events-none" />
 
                 <div className="max-w-[1280px] mx-auto px-6 text-center relative z-10">
@@ -44,12 +44,12 @@ export function ContactClient() {
                         animate="visible"
                         variants={fadeUpVariant}
                     >
-                        <div className="inline-block mb-6 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
+                        <div className="inline-block mb-6 px-4 py-2 rounded-full border border-glass-border bg-glass backdrop-blur-sm">
                             <span className="text-sm font-medium bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent">
                                 Let&apos;s Talk
                             </span>
                         </div>
-                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 tracking-tight">
+                        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-heading text-heading mb-6 tracking-tight">
                             Start your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-secondary-accent">Project</span>
                         </h1>
                         <p className="text-xl text-subtext max-w-2xl mx-auto leading-relaxed mt-6">
@@ -60,7 +60,7 @@ export function ContactClient() {
             </section>
 
             {/* Main Contact Section */}
-            <section className="py-24 bg-[#0B0B0B]">
+            <section className="py-24 bg-surface-alt">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
@@ -73,7 +73,7 @@ export function ContactClient() {
                             className="flex flex-col gap-12"
                         >
                             <div>
-                                <h3 className="text-3xl font-bold font-heading text-white mb-4">Get in touch</h3>
+                                <h3 className="text-3xl font-bold font-heading text-heading mb-4">Get in touch</h3>
                                 <p className="text-subtext text-lg leading-relaxed max-w-md">
                                     Fill out the form to the right, or simply reach out via email or phone. We typically respond within 24 hours.
                                 </p>
@@ -82,11 +82,11 @@ export function ContactClient() {
                             <div className="flex flex-col gap-8">
                                 {/* Email Block */}
                                 <div className="flex items-start gap-5 group">
-                                    <div className="w-14 h-14 rounded-2xl bg-[#1F2937] border border-[#374151] flex items-center justify-center shrink-0 group-hover:bg-accent/10 group-hover:border-accent/40 transition-colors duration-300">
-                                        <Mail className="w-6 h-6 text-white group-hover:text-accent transition-colors duration-300" />
+                                    <div className="w-14 h-14 rounded-2xl bg-[#1F2937] border border-border flex items-center justify-center shrink-0 group-hover:bg-accent/10 group-hover:border-accent/40 transition-colors duration-300">
+                                        <Mail className="w-6 h-6 text-heading group-hover:text-accent transition-colors duration-300" />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-xl mb-1">Email Us</h4>
+                                        <h4 className="text-heading font-bold text-xl mb-1">Email Us</h4>
                                         <a href="mailto:support@devorica.com" className="text-subtext hover:text-white transition-colors text-lg">
                                             support@devorica.com
                                         </a>
@@ -95,11 +95,11 @@ export function ContactClient() {
 
                                 {/* Phone Block */}
                                 <div className="flex items-start gap-5 group">
-                                    <div className="w-14 h-14 rounded-2xl bg-[#1F2937] border border-[#374151] flex items-center justify-center shrink-0 group-hover:bg-accent/10 group-hover:border-accent/40 transition-colors duration-300">
-                                        <Phone className="w-6 h-6 text-white group-hover:text-accent transition-colors duration-300" />
+                                    <div className="w-14 h-14 rounded-2xl bg-[#1F2937] border border-border flex items-center justify-center shrink-0 group-hover:bg-accent/10 group-hover:border-accent/40 transition-colors duration-300">
+                                        <Phone className="w-6 h-6 text-heading group-hover:text-accent transition-colors duration-300" />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-xl mb-1">Call Us</h4>
+                                        <h4 className="text-heading font-bold text-xl mb-1">Call Us</h4>
                                         <a href="tel:+8801619504428" className="text-subtext hover:text-white transition-colors text-lg">
                                             +8801619504428
                                         </a>
@@ -108,11 +108,11 @@ export function ContactClient() {
 
                                 {/* Office Block */}
                                 <div className="flex items-start gap-5 group">
-                                    <div className="w-14 h-14 rounded-2xl bg-[#1F2937] border border-[#374151] flex items-center justify-center shrink-0 group-hover:bg-accent/10 group-hover:border-accent/40 transition-colors duration-300">
-                                        <MapPin className="w-6 h-6 text-white group-hover:text-accent transition-colors duration-300" />
+                                    <div className="w-14 h-14 rounded-2xl bg-[#1F2937] border border-border flex items-center justify-center shrink-0 group-hover:bg-accent/10 group-hover:border-accent/40 transition-colors duration-300">
+                                        <MapPin className="w-6 h-6 text-heading group-hover:text-accent transition-colors duration-300" />
                                     </div>
                                     <div>
-                                        <h4 className="text-white font-bold text-xl mb-1">Office</h4>
+                                        <h4 className="text-heading font-bold text-xl mb-1">Office</h4>
                                         <p className="text-subtext text-lg">
                                             Feni Sadar, Feni<br />
                                             Bangladesh
@@ -129,7 +129,7 @@ export function ContactClient() {
                             viewport={{ once: true, margin: "-100px" }}
                             variants={fadeUpVariant}
                         >
-                            <div className="bg-[#0F172A] p-8 md:p-12 rounded-3xl border border-[#1F2937] shadow-xl relative overflow-hidden">
+                            <div className="bg-card-bg p-8 md:p-12 rounded-3xl border border-border shadow-xl relative overflow-hidden">
                                 {/* Ambient Form Glow */}
                                 <div className="absolute -top-32 -right-32 w-64 h-64 bg-accent/10 blur-[80px] rounded-full pointer-events-none" />
 
@@ -142,7 +142,7 @@ export function ContactClient() {
                                         <div className="w-20 h-20 rounded-full bg-green-500/20 flex items-center justify-center mb-6">
                                             <Send className="w-10 h-10 text-green-400 ml-1" />
                                         </div>
-                                        <h3 className="text-3xl font-bold font-heading text-white mb-2">Message Sent!</h3>
+                                        <h3 className="text-3xl font-bold font-heading text-heading mb-2">Message Sent!</h3>
                                         <p className="text-subtext text-lg max-w-xs mx-auto mb-8">
                                             Thank you for reaching out. A Devorica engineer will be in touch shortly.
                                         </p>
@@ -160,53 +160,53 @@ export function ContactClient() {
                                     <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="flex flex-col gap-2">
-                                                <label htmlFor="firstName" className="text-sm font-medium text-[#9CA3AF]">First Name</label>
+                                                <label htmlFor="firstName" className="text-sm font-medium text-subtext">First Name</label>
                                                 <input
                                                     id="firstName"
                                                     type="text"
                                                     required
-                                                    className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                                                    className="w-full bg-surface-alt border border-border rounded-xl px-4 py-3 text-heading placeholder:text-subtext/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                                                     placeholder="John"
                                                 />
                                             </div>
                                             <div className="flex flex-col gap-2">
-                                                <label htmlFor="lastName" className="text-sm font-medium text-[#9CA3AF]">Last Name</label>
+                                                <label htmlFor="lastName" className="text-sm font-medium text-subtext">Last Name</label>
                                                 <input
                                                     id="lastName"
                                                     type="text"
                                                     required
-                                                    className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                                                    className="w-full bg-surface-alt border border-border rounded-xl px-4 py-3 text-heading placeholder:text-subtext/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                                                     placeholder="Doe"
                                                 />
                                             </div>
                                         </div>
 
                                         <div className="flex flex-col gap-2">
-                                            <label htmlFor="email" className="text-sm font-medium text-[#9CA3AF]">Corporate Email</label>
+                                            <label htmlFor="email" className="text-sm font-medium text-subtext">Corporate Email</label>
                                             <input
                                                 id="email"
                                                 type="email"
                                                 required
-                                                className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+                                                className="w-full bg-surface-alt border border-border rounded-xl px-4 py-3 text-heading placeholder:text-subtext/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
                                                 placeholder="john@company.com"
                                             />
                                         </div>
 
                                         <div className="flex flex-col gap-2">
-                                            <label className="text-sm font-medium text-[#9CA3AF]">Project Budget</label>
+                                            <label className="text-sm font-medium text-subtext">Project Budget</label>
                                             <div className="relative" ref={dropdownRef}>
                                                 <button
                                                     type="button"
                                                     onClick={() => setIsBudgetOpen(!isBudgetOpen)}
-                                                    className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white text-left flex justify-between items-center hover:border-[#374151] transition-all focus:outline-none focus:border-accent"
+                                                    className="w-full bg-surface-alt border border-border rounded-xl px-4 py-3 text-heading text-left flex justify-between items-center hover:border-border transition-all focus:outline-none focus:border-accent"
                                                 >
-                                                    <span className={selectedBudget ? "text-white" : "text-[#4B5563]"}>
+                                                    <span className={selectedBudget ? "text-heading" : "text-[#4B5563]"}>
                                                         {selectedBudget || "Select an option"}
                                                     </span>
                                                     <motion.svg
                                                         animate={{ rotate: isBudgetOpen ? 180 : 0 }}
                                                         width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                        className="text-[#9CA3AF]"
+                                                        className="text-subtext"
                                                     >
                                                         <path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                                     </motion.svg>
@@ -223,7 +223,7 @@ export function ContactClient() {
                                                                 stiffness: 300,
                                                                 damping: 30
                                                             }}
-                                                            className="absolute top-full left-0 w-full z-50 mt-1 bg-[#0F172A] backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden py-2"
+                                                            className="absolute top-full left-0 w-full z-50 mt-1 bg-card-bg backdrop-blur-xl border border-glass-border rounded-2xl shadow-2xl overflow-hidden py-2"
                                                         >
                                                             {[
                                                                 "$5 - $100",
@@ -238,7 +238,7 @@ export function ContactClient() {
                                                                         setSelectedBudget(option);
                                                                         setIsBudgetOpen(false);
                                                                     }}
-                                                                    className="w-full px-6 py-3 text-left text-[#D1D5DB] hover:bg-accent/10 hover:text-white transition-colors flex items-center justify-between group"
+                                                                    className="w-full px-6 py-3 text-left text-body hover:bg-accent/10 hover:text-white transition-colors flex items-center justify-between group"
                                                                 >
                                                                     {option}
                                                                     {selectedBudget === option && (
@@ -255,12 +255,12 @@ export function ContactClient() {
                                         </div>
 
                                         <div className="flex flex-col gap-2">
-                                            <label htmlFor="message" className="text-sm font-medium text-[#9CA3AF]">Project Details</label>
+                                            <label htmlFor="message" className="text-sm font-medium text-subtext">Project Details</label>
                                             <textarea
                                                 id="message"
                                                 required
                                                 rows={5}
-                                                className="w-full bg-[#0B0B0B] border border-[#1F2937] rounded-xl px-4 py-3 text-white placeholder:text-[#4B5563] focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
+                                                className="w-full bg-surface-alt border border-border rounded-xl px-4 py-3 text-heading placeholder:text-subtext/60 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all resize-none"
                                                 placeholder="Tell us about your technical requirements..."
                                             />
                                         </div>
@@ -289,7 +289,7 @@ export function ContactClient() {
             </section>
 
             {/* Ultra-Grade Map Section */}
-            <section className="pb-24 bg-[#0B0B0B]">
+            <section className="pb-24 bg-surface-alt">
                 <div className="max-w-[1280px] mx-auto px-6">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
@@ -302,7 +302,7 @@ export function ContactClient() {
                         <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none" />
 
                         {/* High-End Map Header Overlay */}
-                        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 px-8 py-3 rounded-full bg-[#0F172A]/80 backdrop-blur-md border border-white/10 shadow-2xl">
+                        <div className="absolute top-8 left-1/2 -translate-x-1/2 z-20 px-8 py-3 rounded-full bg-card-bg/80 backdrop-blur-md border border-glass-border shadow-2xl">
                             <h2 className="text-xl md:text-2xl font-heading font-bold bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent">
                                 Visit Our Office
                             </h2>
@@ -323,10 +323,10 @@ export function ContactClient() {
                         </div>
 
                         {/* Glass Overlay for aesthetics */}
-                        <div className="absolute bottom-10 left-10 z-20 px-6 py-4 rounded-2xl bg-[#0F172A]/80 backdrop-blur-md border border-white/10 shadow-xl">
+                        <div className="absolute bottom-10 left-10 z-20 px-6 py-4 rounded-2xl bg-card-bg/80 backdrop-blur-md border border-glass-border shadow-xl">
                             <div className="flex items-center gap-3">
                                 <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                                <span className="text-white font-medium">Headquarters</span>
+                                <span className="text-heading font-medium">Headquarters</span>
                             </div>
                             <p className="text-sm text-subtext mt-1">Feni Sadar, Feni, Bangladesh</p>
                         </div>

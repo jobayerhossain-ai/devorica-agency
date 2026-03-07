@@ -6,7 +6,7 @@ export const Divider = forwardRef<HTMLHRElement, ComponentProps<"hr">>(
         return (
             <hr
                 ref={ref}
-                className={cn("w-full border-t border-[#1F2937]", className)}
+                className={cn("w-full border-t border-border", className)}
                 {...props}
             />
         );
