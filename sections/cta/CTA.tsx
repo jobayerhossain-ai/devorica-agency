@@ -5,7 +5,7 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 
 export function CTA() {
     return (
-        <SectionLayout background="dark" className="relative overflow-hidden">
+        <SectionLayout background="default" className="relative overflow-hidden">
             {/* Inner Glow/Mesh Effect */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/20 blur-[120px] rounded-full mix-blend-screen" />
