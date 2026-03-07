@@ -17,7 +17,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             outline: "border border-secondary-accent text-foreground hover:bg-foreground/5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)]",
             ghost: "text-foreground-muted hover:text-foreground hover:bg-foreground/5",
             cta: "cta-animated",
-            "cta-outline": "cta-animated opacity-80 hover:opacity-100", // Outline variant also uses animated but slightly different
+            "cta-outline": "bg-secondary-accent/10 backdrop-blur-md border border-secondary-accent/30 text-secondary-accent hover:bg-secondary-accent/20 hover:border-secondary-accent/60 hover:shadow-[0_0_25px_rgba(99,102,241,0.3)] hover:-translate-y-1",
         };
 
         const sizes = {
@@ -27,7 +27,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             xl: "px-8 py-4 text-lg h-14",
         };
 
-        const isCTA = variant === "cta" || variant === "cta-outline";
+        const isCTA = variant === "cta";
 
         if (isCTA) {
             return (
