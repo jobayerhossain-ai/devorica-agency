@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,18 +24,27 @@ export function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const pathname = usePathname();
+    const [mounted, setMounted] = useState(false);
+    const { theme, systemTheme } = useTheme();
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
+        setMounted(true);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     useEffect(() => {
         setIsOpen(false);
     }, [pathname]);
+
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+    const isLight = mounted && currentTheme === 'light';
+    const logoSrc = isLight
+        ? "/images/Black Closed Sign Landscape Poster (1).png"
+        : "/images/logo.png";
 
     useEffect(() => {
         const handleResize = () => {
@@ -63,11 +73,11 @@ export function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 relative z-50 group">
                     <Image
-                        src="/images/logo.png"
+                        src={logoSrc}
                         alt="Devorica Logo"
                         width={230}
                         height={92}
-                        className="h-[92px] w-auto object-contain -my-6"
+                        className="h-[92px] w-auto object-contain -my-6 transition-opacity duration-300"
                         priority
                     />
                 </Link>

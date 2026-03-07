@@ -1,9 +1,25 @@
+"use client";
+
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Phone, Facebook, Instagram, Github, Linkedin } from "lucide-react";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
+    const [mounted, setMounted] = useState(false);
+    const { theme, systemTheme } = useTheme();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+    const isLight = mounted && currentTheme === 'light';
+    const logoSrc = isLight
+        ? "/images/Black Closed Sign Landscape Poster (1).png"
+        : "/images/logo.png";
 
     return (
         <footer className="bg-surface border-t border-border pt-20 pb-10 transition-colors duration-300">
@@ -13,11 +29,11 @@ export function Footer() {
                     <div className="flex flex-col gap-6">
                         <Link href="/" className="inline-block">
                             <Image
-                                src="/images/logo.png"
+                                src={logoSrc}
                                 alt="Devorica Logo"
                                 width={230}
                                 height={92}
-                                className="h-[92px] w-auto object-contain shrink-0"
+                                className="h-[92px] w-auto object-contain shrink-0 transition-opacity duration-300"
                             />
                         </Link>
                         <p className="text-foreground-muted text-base leading-relaxed max-w-sm">
