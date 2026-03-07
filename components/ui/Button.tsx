@@ -16,8 +16,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             secondary: "bg-foreground/10 text-foreground hover:bg-foreground/15 hover:-translate-y-0.5",
             outline: "border border-secondary-accent text-foreground hover:bg-foreground/5 hover:border-accent hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)]",
             ghost: "text-foreground-muted hover:text-foreground hover:bg-foreground/5",
-            cta: "cta-button",
-            "cta-outline": "cta-button-outline",
+            cta: "cta-animated",
+            "cta-outline": "cta-animated opacity-80 hover:opacity-100", // Outline variant also uses animated but slightly different
         };
 
         const sizes = {
@@ -29,6 +29,21 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
         const isCTA = variant === "cta" || variant === "cta-outline";
 
+        if (isCTA) {
+            return (
+                <button
+                    ref={ref}
+                    className={cn(variants[variant], className)}
+                    {...props}
+                >
+                    <span className="circle" aria-hidden="true">
+                        <span className="icon arrow"></span>
+                    </span>
+                    <span className="button-text">{children}</span>
+                </button>
+            );
+        }
+
         return (
             <button
                 ref={ref}
@@ -36,12 +51,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 {...props}
             >
                 {children}
-                {(isCTA || showIcon) && (
-                    <div className={cn(
-                        "ml-4 flex items-center justify-center transition-all duration-300",
-                        isCTA ? "cta-icon" : ""
-                    )}>
-                        <svg className={cn("w-4 h-4 transition-transform duration-300 group-hover:translate-x-1", variant === "cta" ? "text-secondary-accent" : "text-foreground")} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {showIcon && (
+                    <div className="ml-4 flex items-center justify-center transition-all duration-300">
+                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
                         </svg>
                     </div>

@@ -261,62 +261,92 @@
 /* ========================================
    CTA Button System
    ======================================== */
-.cta-button {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  background: linear-gradient(135deg, #0097A7 0%, #4F46E5 100%);
-  color: white !important;
-  border-radius: 1rem;
-  font-weight: 700;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+/* ========================================
+   Animated CTA Button (Uiverse.io Style)
+   ======================================== */
+.cta-animated {
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 20px -10px rgba(0, 151, 167, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.cta-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 30px -15px rgba(0, 151, 167, 0.6);
-  background: linear-gradient(135deg, #00E5FF 0%, #6366F1 100%);
-}
-
-.cta-button-outline {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
   background: transparent;
-  color: var(--t-foreground);
-  padding: 1rem 2.5rem;
-  border-radius: 1rem;
-  font-weight: 700;
-  border: 2px solid var(--t-border);
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  width: 14rem;
+  height: auto;
 }
 
-.cta-button-outline:hover {
-  border-color: #00E5FF;
-  background: rgba(0, 229, 255, 0.05);
+.cta-animated .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: var(--t-foreground);
+  border-radius: 1.625rem;
 }
 
-.cta-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: white;
-  border-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #4F46E5;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover .cta-icon {
-  width: calc(100% - 1rem);
+.cta-animated .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
-  right: 0.5rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: var(--t-surface);
+}
+
+.cta-animated .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+.cta-animated .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid var(--t-surface);
+  border-right: 0.125rem solid var(--t-surface);
+  transform: rotate(45deg);
+}
+
+.cta-animated .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: var(--t-foreground);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.cta-animated:hover .circle {
+  width: 100%;
+}
+
+.cta-animated:hover .circle .icon.arrow {
+  background: var(--t-surface);
+  transform: translate(1rem, 0);
+}
+
+.cta-animated:hover .button-text {
+  color: var(--t-surface);
 }
 
 @keyframes jump-jump-1 {
