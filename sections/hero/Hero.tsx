@@ -7,13 +7,13 @@ import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 export function Hero() {
     return (
         <SectionLayout className="min-h-[90vh] flex items-center pt-32 pb-16 lg:pt-24 lg:pb-12" background="transparent">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
 
                 {/* Left Side Structure (Typography & CTAs) */}
                 <AnimatedReveal
                     stagger={true}
                     margin="-50px"
-                    className="flex flex-col items-center text-center lg:items-start lg:text-left"
+                    className="flex flex-col items-center text-center lg:items-start lg:text-left lg:col-span-7 lg:pr-8"
                 >
                     <div className="inline-block mb-8 px-5 py-2 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md">
                         <span className="text-xs sm:text-sm font-bold tracking-[0.2em] uppercase text-accent">
@@ -57,7 +57,7 @@ export function Hero() {
                     initial={{ opacity: 0, scale: 0.9, x: 20 }}
                     whileInView={{ opacity: 1, scale: 1, x: 0 }}
                     transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                    className="relative w-full max-w-2xl mx-auto lg:ml-0 group"
+                    className="relative w-full max-w-2xl mx-auto lg:ml-auto lg:col-span-5 group"
                 >
                     {/* Main Visual Asset */}
                     <div className="relative rounded-[40px] border border-border bg-surface overflow-hidden shadow-2xl aspect-square lg:aspect-[4/5] xl:aspect-square transition-colors duration-300">
