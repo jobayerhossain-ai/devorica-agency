@@ -385,3 +385,33 @@
     transform: scale(1);
   }
 }
+
+.preloader-text {
+  position: absolute;
+  top: 170px;
+  /* Position below the dots */
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 14px;
+  animation: text-pulse 1.5s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes text-pulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(0.98);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}

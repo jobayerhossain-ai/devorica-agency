@@ -33,6 +33,7 @@ export const Preloader = () => {
                     <div className="preloader-dot dot-1"></div>
                     <div className="preloader-dot dot-2"></div>
                     <div className="preloader-dot dot-3"></div>
+                    <p className="preloader-text">Loading...</p>
                 </div>
             </div>
         </div>
