@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeUpVariant } from "@/animations/variants";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Button } from "@/components/ui/Button";
 
 export function ContactClient() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -146,15 +147,9 @@ export function ContactClient() {
                                         <p className="text-foreground-muted text-lg max-w-xs mx-auto mb-8">
                                             Thank you for reaching out. A Devorica engineer will be in touch shortly.
                                         </p>
-                                        <button className="cta-button-outline" onClick={() => setIsSubmitted(false)} type="button">
+                                        <Button variant="cta-outline" size="lg" onClick={() => setIsSubmitted(false)} type="button">
                                             Send Another Message
-                                            <div className="cta-icon">
-                                                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
-                                                </svg>
-                                            </div>
-                                        </button>
+                                        </Button>
                                     </motion.div>
                                 ) : (
                                     <form onSubmit={handleSubmit} className="flex flex-col gap-6 relative z-10">
@@ -265,20 +260,16 @@ export function ContactClient() {
                                             />
                                         </div>
 
-                                        <button
+                                        <Button
                                             type="submit"
-                                            className="cta-button h-14 text-base w-full mt-2 justify-center"
+                                            variant="cta"
+                                            size="lg"
+                                            className="w-full mt-2"
                                             disabled={isSubmitting}
                                             style={{ opacity: isSubmitting ? 0.6 : 1, pointerEvents: isSubmitting ? 'none' : 'auto' }}
                                         >
                                             {isSubmitting ? "Transmitting..." : "Send Message"}
-                                            <div className="cta-icon">
-                                                <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M0 0h24v24H0z" fill="none" />
-                                                    <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
-                                                </svg>
-                                            </div>
-                                        </button>
+                                        </Button>
                                     </form>
                                 )}
                             </div>

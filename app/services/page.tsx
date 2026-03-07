@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { fadeUpVariant, staggerContainer } from "@/animations/variants";
 import { CTA } from "@/sections/cta/CTA";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 import { CheckCircle2, Rocket, Globe, ShoppingCart, Smartphone, Code } from "lucide-react";
 
@@ -177,15 +178,9 @@ export default function ServicesPage() {
 
                                         <div className="pt-4">
                                             <Link href={service.href}>
-                                                <button className="cta-button h-14 text-base px-6">
+                                                <Button variant="cta" size="lg">
                                                     Learn More
-                                                    <div className="cta-icon">
-                                                        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                            <path d="M0 0h24v24H0z" fill="none" />
-                                                            <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor" />
-                                                        </svg>
-                                                    </div>
-                                                </button>
+                                                </Button>
                                             </Link>
                                         </div>
                                     </div>
