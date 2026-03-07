@@ -657,14 +657,44 @@ export const BLOG_POSTS: Record<string, BlogPost> = {
 // Programmatic SEO Generator
 const CITIES = ["Dhaka", "Chittagong", "Sylhet", "Khulna", "Rajshahi", "Barisal", "Rangpur", "Mymensingh"];
 
-export const PROGRAMMATIC_PAGES = CITIES.map(city => ({
-    city,
-    slug: `web-development-services-${city.toLowerCase()}`,
-    title: `Best Web Development Services in ${city}`,
-    description: `Devorica provides premium custom website development and design services in ${city}, Bangladesh. High performance guaranteed.`,
-    template: {
-        headline: `Transforming Businesses in ${city} with High-Performance Digital Solutions`,
-        subheadline: `Join the leading companies in ${city} that trust Devorica for their critical web infrastructure.`,
-        localContext: `Whether you are a growing enterprise in the heart of ${city} or a local business looking to reach nationwide customers, our engineering team is here to help.`
-    }
-}));
+export const PROGRAMMATIC_PAGES: Record<string, BlogPost> = CITIES.reduce((acc, city) => {
+    const slug = `website-development-cost-${city.toLowerCase()}`;
+    acc[slug] = {
+        slug: slug,
+        title: `Website Development Cost in ${city}: 2024 Pricing Guide`,
+        description: `Everything you need to know about website development costs in ${city}. Detailed pricing for corporate, ecommerce, and custom web apps.`,
+        keywords: [`website development cost ${city.toLowerCase()}`, `web design price ${city.toLowerCase()}`, `best web developers in ${city.toLowerCase()}`],
+        publishDate: "2024-03-07",
+        category: "Economics",
+        readingTime: "10 min read",
+        content: {
+            introduction: `For businesses in ${city}, understanding the investment required for a professional digital presence is the first step toward growth. This guide breaks down local market rates and technical factors that influence pricing for projects in the ${city} region.`,
+            sections: [
+                {
+                    title: `Local Market Overview in ${city}`,
+                    content: `The tech ecosystem in ${city} is expanding rapidly. While there are many agencies, the cost varies significantly based on whether you choose a template-based solution or a custom-engineered platform like Next.js.`
+                },
+                {
+                    title: "Estimated Pricing Breakdown",
+                    content: `In ${city}, you can typically expect the following pricing ranges for high-quality work:\n\n1. **Corporate Site:** BDT 60k - 150k\n2. **Ecommerce Engine:** BDT 180k - 500k\n3. **Custom Software:** BDT 600k+`
+                }
+            ],
+            faqs: [
+                {
+                    question: `Can Devorica handle projects for clients in ${city}?`,
+                    answer: `Yes, we provide premium web development services to businesses across ${city} with remote consultations and local support where needed.`
+                }
+            ],
+            conclusion: `Choosing the right partner in ${city} is about balancing upfront cost with long-term ROI. Devorica focus on performance-first engineering that pays for itself.`
+        },
+        image: {
+            url: "/blog/city-cost.jpg",
+            alt: `Website development cost visualization for businesses in ${city}`
+        },
+        internalLinks: [
+            { text: "Get a Local Quote", href: "/contact" },
+            { text: "Our Services", href: "/services" }
+        ]
+    };
+    return acc;
+}, {} as Record<string, BlogPost>);

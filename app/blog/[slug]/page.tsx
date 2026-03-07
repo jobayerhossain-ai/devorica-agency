@@ -1,18 +1,21 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BLOG_POSTS } from "@/constants/blog";
+import { BLOG_POSTS, PROGRAMMATIC_PAGES } from "@/constants/blog";
 import BlogArticleView from "@/components/blog/BlogArticleView";
 import Script from "next/script";
 
 export async function generateStaticParams() {
-    return Object.keys(BLOG_POSTS).map((slug) => ({
+    const manualSlugs = Object.keys(BLOG_POSTS);
+    const programmaticSlugs = Object.keys(PROGRAMMATIC_PAGES);
+
+    return [...manualSlugs, ...programmaticSlugs].map((slug) => ({
         slug,
     }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
     const { slug } = await params;
-    const post = BLOG_POSTS[slug];
+    const post = BLOG_POSTS[slug] || PROGRAMMATIC_PAGES[slug];
 
     if (!post) {
         return {
@@ -48,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const post = BLOG_POSTS[slug];
+    const post = BLOG_POSTS[slug] || PROGRAMMATIC_PAGES[slug];
 
     if (!post) {
         notFound();
