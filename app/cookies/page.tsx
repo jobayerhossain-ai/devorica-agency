@@ -20,7 +20,7 @@ export default function CookiePolicy() {
                     <section>
                         <h2 className="text-2xl font-heading font-semibold text-white mb-4">1. What are Cookies?</h2>
                         <p>
-                            Cookies are small text files that are stored on your computer or mobile device when you visit a website. They help the website remember your actions and preferences over a period of time, so you don't have to keep re-entering them whenever you come back to the site.
+                            Cookies are small text files that are stored on your computer or mobile device when you visit a website. They help the website remember your actions and preferences over a period of time, so you don&apos;t have to keep re-entering them whenever you come back to the site.
                         </p>
                     </section>
 

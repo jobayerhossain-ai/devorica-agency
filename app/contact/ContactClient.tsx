@@ -2,10 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { fadeUpVariant, staggerContainer } from "@/animations/variants";
-import { CTA } from "@/sections/cta/CTA";
-import { Button } from "@/components/ui/Button";
-import { Mail, MapPin, Phone, MessageSquare, Send } from "lucide-react";
+import { fadeUpVariant } from "@/animations/variants";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 export function ContactClient() {
     const [isSubmitting, setIsSubmitting] = useState(false);

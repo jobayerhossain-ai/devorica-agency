@@ -8,7 +8,7 @@ export function Preloader() {
 
     useEffect(() => {
         setIsMounted(true);
-        const minDuration = 1500; // 1.5 seconds minimum
+        const minDuration = 2000; // 2 seconds minimum
         const startTime = Date.now();
         let timeoutId: NodeJS.Timeout;
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { fadeUpVariant, staggerContainer } from "@/animations/variants";
+import { fadeUpVariant } from "@/animations/variants";
 import { Section } from "@/components/ui/Section";
 import { Badge } from "@/components/ui/Badge";
 import { CheckCircle2, Zap, Shield, Lock, Layers, Eye, Smartphone, ShoppingCart, Globe, Bell } from "lucide-react";
@@ -163,7 +163,7 @@ export function ServiceTemplate({ service }: { service: ServiceData }) {
                                 <span className="text-accent">Standards.</span>
                             </h2>
                             <p className="text-[#9CA3AF] text-xl leading-relaxed mb-10">
-                                We don't just build; we engineer with precision. Our strategies are backed by authoritative research and industry-standard best practices.
+                                We don&apos;t just build; we engineer with precision. Our strategies are backed by authoritative research and industry-standard best practices.
                             </p>
                         </div>
                         <div className="space-y-6">

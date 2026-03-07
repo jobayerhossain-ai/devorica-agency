@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUpVariant, staggerContainer } from "@/animations/variants";
 import { CTA } from "@/sections/cta/CTA";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import Image from "next/image";

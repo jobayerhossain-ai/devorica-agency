@@ -1,0 +1,82 @@
+﻿
+> next_temp@0.1.0 lint
+> eslint
+
+
+C:\Users\jobayer\Desktop\devorica_agency\app\blog\BlogClient.tsx
+  7:10  warning  'Badge' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\jobayer\Desktop\devorica_agency\app\contact\ContactClient.tsx
+  5:25  warning  'staggerContainer' is defined but never used  @typescript-eslint/no-unused-vars
+  6:10  warning  'CTA' is defined but never used               @typescript-eslint/no-unused-vars
+  7:10  warning  'Button' is defined but never used            @typescript-eslint/no-unused-vars
+  8:31  warning  'MessageSquare' is defined but never used     @typescript-eslint/no-unused-vars
+
+C:\Users\jobayer\Desktop\devorica_agency\app\cookies\page.tsx
+  23:227  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\jobayer\Desktop\devorica_agency\app\portfolio\page.tsx
+  6:10  warning  'Badge' is defined but never used   @typescript-eslint/no-unused-vars
+  7:10  warning  'Button' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\jobayer\Desktop\devorica_agency\app\services\page.tsx
+  7:10  warning  'Button' is defined but never used      @typescript-eslint/no-unused-vars
+  9:24  warning  'Laptop' is defined but never used      @typescript-eslint/no-unused-vars
+  9:73  warning  'ArrowRight' is defined but never used  @typescript-eslint/no-unused-vars
+  9:91  warning  'Zap' is defined but never used         @typescript-eslint/no-unused-vars
+
+C:\Users\jobayer\Desktop\devorica_agency\app\terms\page.tsx
+  30:138  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  37:77   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  37:84   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  51:54   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  51:84   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  51:90   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  58:268  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\jobayer\Desktop\devorica_agency\components\layout\Navbar.tsx
+  35:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\jobayer\Desktop\devorica_agency\components\layout\Navbar.tsx:35:9
+  33 |
+  34 |     useEffect(() => {
+> 35 |         setIsOpen(false);
+     |         ^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |     }, [pathname]);
+  37 |
+  38 |     useEffect(() => {  react-hooks/set-state-in-effect
+
+C:\Users\jobayer\Desktop\devorica_agency\components\layout\ServiceTemplate.tsx
+    4:25  warning  'staggerContainer' is defined but never used                     @typescript-eslint/no-unused-vars
+    9:10  warning  'Button' is defined but never used                               @typescript-eslint/no-unused-vars
+  166:39  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\jobayer\Desktop\devorica_agency\components\ui\Preloader.tsx
+  10:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\jobayer\Desktop\devorica_agency\components\ui\Preloader.tsx:10:9
+   8 |
+   9 |     useEffect(() => {
+> 10 |         setIsMounted(true);
+     |         ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  11 |         const minDuration = 1500; // 1.5 seconds minimum
+  12 |         const startTime = Date.now();
+  13 |         let timeoutId: NodeJS.Timeout;  react-hooks/set-state-in-effect
+
+C:\Users\jobayer\Desktop\devorica_agency\constants\data.ts
+  30:11  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+Ô£û 25 problems (12 errors, 13 warnings)
+

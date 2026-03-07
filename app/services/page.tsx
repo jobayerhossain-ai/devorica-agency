@@ -4,9 +4,8 @@ import { motion } from "framer-motion";
 import { fadeUpVariant, staggerContainer } from "@/animations/variants";
 import { CTA } from "@/sections/cta/CTA";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
 
-import { CheckCircle2, Laptop, Rocket, Globe, ShoppingCart, Smartphone, ArrowRight, Code, Zap } from "lucide-react";
+import { CheckCircle2, Rocket, Globe, ShoppingCart, Smartphone, Code } from "lucide-react";
 
 // Flagship Services Data for the Detailed Services Page
 const DETAILED_SERVICES = [
