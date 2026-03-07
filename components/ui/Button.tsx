@@ -30,10 +30,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         const isCTA = variant === "cta";
 
         if (isCTA) {
+            // Apply wider styles automatically if the text is long enough to overlap the circle icon
+            const isLongText = typeof children === "string" && children.length > 14;
+
             return (
                 <button
                     ref={ref}
-                    className={cn(variants[variant], className)}
+                    className={cn(variants[variant], isLongText && "cta-wide", className)}
                     {...props}
                 >
                     <span className="circle" aria-hidden="true">
