@@ -313,6 +313,7 @@
   border-radius: 50%;
   background: #00E5FF;
   /* website accent color */
+  border: 2px solid #000;
   animation-fill-mode: both;
 }
 
