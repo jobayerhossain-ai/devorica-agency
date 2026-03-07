@@ -51,6 +51,7 @@ import { SmoothScrolling } from "@/components/layout/SmoothScrolling";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/ui/ScrollToTop";
+import { Preloader } from "@/components/ui/Preloader";
 
 export default function RootLayout({
   children,
@@ -60,6 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable} antialiased`}>
+        <Preloader />
         <SmoothScrolling>
           <Navbar />
           <main className="min-h-screen pt-[80px]">
