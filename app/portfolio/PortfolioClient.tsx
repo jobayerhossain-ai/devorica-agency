@@ -7,51 +7,10 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 
-// Full Portfolio Data Source
-const PORTFOLIO_PROJECTS = [
-    {
-        title: "FinTech Dashboard Analytics",
-        description: "A comprehensive financial dashboard providing real-time data visualization and deep analytics for enterprise banking clients.",
-        tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Recharts"],
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-        href: "/portfolio/fintech-dashboard"
-    },
-    {
-        title: "E-Commerce Global Platform",
-        description: "A high-conversion, wildly fast multi-tenant headless e-commerce platform handling 10k+ concurrent checkouts.",
-        tech: ["React", "Node.js", "Stripe", "PostgreSQL"],
-        image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=1200",
-        href: "/portfolio/ecommerce-platform"
-    },
-    {
-        title: "SaaS Marketing Site",
-        description: "A conversion-optimized B2B SaaS marketing website featuring heavy scroll animations and split-testing architecture.",
-        tech: ["Next.js", "GSAP", "Sanity CMS", "TypeScript"],
-        image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=1200",
-        href: "/portfolio/saas-site"
-    },
-    {
-        title: "Healthcare Mobile App",
-        description: "A cross-platform React Native application for patient scheduling, telemedicine calls, and secure record keeping.",
-        tech: ["React Native", "Firebase", "WebRTC", "Express"],
-        image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1200",
-        href: "/portfolio/healthcare-app"
-    },
-    {
-        title: "AI Logistics Engine",
-        description: "An AI-powered logistics tracking dashboard visualizing global supply chains and predicting shipment delays intelligently.",
-        tech: ["Vue.js", "Python", "TensorFlow", "Mapbox"],
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=1200",
-        href: "/portfolio/ai-logistics"
-    },
-    {
-        title: "Real Estate Property Portal",
-        description: "A premium real estate listing application with dynamic map search, virtual 3D tours, and automated agent matching.",
-        tech: ["Next.js", "Prisma", "AWS S3", "Three.js"],
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200",
-        href: "/portfolio/real-estate"
-    }
-];
+import { PORTFOLIO_PROJECTS } from "@/constants/portfolio";
+
+// Convert to array for rendering
+const ALL_PROJECTS = Object.values(PORTFOLIO_PROJECTS);
 
 export default function PortfolioPage() {
     return (
@@ -94,17 +53,17 @@ export default function PortfolioPage() {
                         viewport={{ once: true, margin: "-100px" }}
                         variants={staggerContainer}
                     >
-                        {PORTFOLIO_PROJECTS.map((project, index) => (
+                        {ALL_PROJECTS.map((project, index) => (
                             <motion.div
                                 key={index}
                                 variants={fadeUpVariant}
                                 className="group flex flex-col h-full transition-all duration-500 ease-out hover:-translate-y-2"
                             >
-                                <Link href={project.href} className="flex-1 flex flex-col h-full">
+                                <Link href={`/portfolio/${project.slug}`} className="flex-1 flex flex-col h-full">
                                     {/* Large Image Showcase */}
                                     <div className="relative w-full aspect-[16/10] rounded-xl overflow-hidden mb-10 border border-border bg-card shadow-lg group-hover:shadow-accent/5 group-hover:border-accent/20 transition-all duration-500">
                                         <Image
-                                            src={project.image}
+                                            src={project.mainImage}
                                             alt={project.title}
                                             fill
                                             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
@@ -122,7 +81,7 @@ export default function PortfolioPage() {
                                     {/* Project Details */}
                                     <div className="flex flex-col gap-5 flex-1 px-2">
                                         <div className="flex flex-col gap-3">
-                                            <h3 className="text-3xl font-bold font-heading text-foreground tracking-tight group-hover:text-accent transition-colors duration-300">
+                                            <h3 className="text-3xl font-bold font-heading text-foreground group-hover:text-accent transition-colors duration-300 tracking-tight leading-tight">
                                                 {project.title}
                                             </h3>
 
@@ -132,7 +91,7 @@ export default function PortfolioPage() {
                                         </div>
 
                                         <div className="flex flex-wrap gap-2.5 mt-auto pt-4">
-                                            {project.tech.map((t, i) => (
+                                            {project.techStack.map((t, i) => (
                                                 <span
                                                     key={i}
                                                     className="px-3 py-1 text-xs font-semibold tracking-wide uppercase rounded-full border border-border bg-card text-foreground-muted group-hover:border-accent/20 group-hover:text-accent/80 transition-all duration-300"

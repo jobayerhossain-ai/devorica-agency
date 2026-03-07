@@ -134,19 +134,19 @@ export const PROJECTS: Project[] = [
         title: "FinTech Dashboard",
         tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
-        href: "/portfolio/fintech"
+        href: "/portfolio/fintech-dashboard"
     },
     {
         title: "E-Commerce Platform",
         tech: ["React", "Node.js", "Stripe"],
         image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?auto=format&fit=crop&q=80&w=800",
-        href: "/portfolio/ecommerce"
+        href: "/portfolio/ecommerce-platform"
     },
     {
         title: "SaaS Marketing Site",
         tech: ["Next.js", "GSAP", "Sanity"],
         image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=800",
-        href: "/portfolio/saas"
+        href: "/portfolio/saas-marketing-site"
     }
 ];
 
