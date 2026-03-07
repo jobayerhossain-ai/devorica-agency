@@ -1,62 +1,48 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
-import Link from "next/link";
 import { SectionLayout } from "@/components/layout/SectionLayout";
 import { AnimatedReveal } from "@/components/ui/AnimatedReveal";
 
 export function CTA() {
     return (
-        <SectionLayout background="default" className="relative overflow-hidden">
-            {/* Inner Glow/Mesh Effect */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent/20 blur-[120px] rounded-full mix-blend-screen" />
-                <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-secondary-accent/20 blur-[130px] rounded-full mix-blend-screen" />
-            </div>
+        <section className="relative overflow-hidden bg-[#050B14] py-32 lg:py-40 border-t border-white/5">
+            {/* Extremely subtle background glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00E5FF]/5 blur-[150px] rounded-full pointer-events-none" />
 
-            <AnimatedReveal
-                stagger={true}
-                className="relative z-10 p-10 sm:p-14 lg:p-20 rounded-[40px] border border-border bg-foreground/[0.02] backdrop-blur-2xl overflow-hidden group shadow-2xl transition-colors duration-300"
-            >
-                {/* Hover Glow Effect */}
-                <div className="absolute -inset-x-20 -top-20 h-40 bg-gradient-to-b from-accent/10 to-transparent blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                <div className="relative z-10 flex flex-col items-center text-center">
-                    <div className="mb-10">
-                        <span className="px-5 py-2 rounded-full border border-accent/30 bg-accent/10 text-accent text-[11px] font-bold tracking-[0.2em] uppercase">
-                            Global Partnership
-                        </span>
-                    </div>
-
+            <div className="max-w-[1280px] mx-auto px-6 relative z-10 w-full">
+                <AnimatedReveal
+                    stagger={true}
+                    className="flex flex-col items-center text-center max-w-3xl mx-auto"
+                >
                     <h2
-                        className="text-4xl sm:text-5xl lg:text-7xl font-black font-heading text-foreground mb-10 leading-[1.05] tracking-tighter"
+                        className="text-5xl sm:text-6xl lg:text-7xl font-black font-heading text-white mb-6 tracking-tight leading-tight"
                     >
-                        Ready to scale your <br className="hidden lg:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground via-foreground to-accent/80">
-                            next digital success?
-                        </span>
+                        Ready to <span className="text-[#00E5FF]">evolve?</span>
                     </h2>
 
                     <p
-                        className="text-xl sm:text-2xl text-foreground-muted mb-14 max-w-2xl leading-relaxed font-medium"
+                        className="text-lg sm:text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed"
                     >
-                        Partner with Devorica to transform your boldest vision into a market-dominating success story. Our strategic engineering team is ready to accelerate your ROI.
+                        {"Let's"} discuss how Devorica can provide the technical leverage your business needs to outperform the competition.
                     </p>
 
-                    <div
-                        className="flex flex-col sm:flex-row gap-5"
-                    >
-                        <Link href="/contact" className="w-full sm:w-auto">
-                            <Button variant="cta" size="xl" className="w-full sm:w-auto">
-                                Start Your Project
-                            </Button>
-                        </Link>
-                        <Link href="/contact" className="w-full sm:w-auto">
-                            <Button variant="cta-outline" size="xl" className="w-full sm:w-auto">
-                                Contact Our Team
-                            </Button>
-                        </Link>
-                    </div>
-                </div>
-            </AnimatedReveal>
-        </SectionLayout>
+                    <form className="w-full max-w-2xl flex flex-col sm:flex-row gap-4" onSubmit={(e) => e.preventDefault()}>
+                        <input
+                            type="email"
+                            placeholder="Enter your business email"
+                            required
+                            className="flex-1 bg-[#0F172A] border border-white/10 text-white text-base rounded-xl px-6 py-4 outline-none focus:border-[#00E5FF]/50 focus:ring-1 focus:ring-[#00E5FF]/50 transition-all placeholder:text-gray-500"
+                        />
+                        <button
+                            type="submit"
+                            className="inline-flex items-center justify-center font-bold text-sm tracking-wide rounded-xl transition-all duration-300 bg-[#00E5FF] text-black px-8 py-4 uppercase hover:bg-[#00E5FF] hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(0,229,255,0.4)] whitespace-nowrap"
+                        >
+                            Book a Discovery Call
+                        </button>
+                    </form>
+                </AnimatedReveal>
+            </div>
+        </section>
     );
 }
