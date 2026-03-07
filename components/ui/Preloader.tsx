@@ -6,24 +6,23 @@ export const Preloader = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Hide preloader after window is fully loaded
+        const minDuration = 1500; // 1.5 seconds minimum
+        const startTime = Date.now();
+
         const handleLoad = () => {
-            // Small delay for smooth transition
+            const elapsedTime = Date.now() - startTime;
+            const remainingTime = Math.max(0, minDuration - elapsedTime);
+
             setTimeout(() => {
                 setLoading(false);
-            }, 800);
+            }, remainingTime);
         };
 
         if (document.readyState === "complete") {
             handleLoad();
         } else {
             window.addEventListener("load", handleLoad);
-            // Fallback in case load event doesn't fire
-            const timeout = setTimeout(handleLoad, 3000);
-            return () => {
-                window.removeEventListener("load", handleLoad);
-                clearTimeout(timeout);
-            };
+            return () => window.removeEventListener("load", handleLoad);
         }
     }, []);
 
